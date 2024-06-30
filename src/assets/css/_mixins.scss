@@ -1,0 +1,12 @@
+// media-queries
+
+.search-container {
+    @media (min-width: 992px) {
+      width: 50%;
+    }
+  
+    @media (max-width: 992px) {
+      margin-top: 20px;
+      padding-left: 15px;
+    }
+  }

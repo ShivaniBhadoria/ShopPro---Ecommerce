@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'shoppro';
+  title = 'ShopPro';
+
+  constructor() {
+    // Initialization code can go here
+  }
+
 }

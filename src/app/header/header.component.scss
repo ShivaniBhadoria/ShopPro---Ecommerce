@@ -1,0 +1,65 @@
+@import '../../assets/css/mixins';
+@import '../../assets/css/variables';
+
+.navbar-container{
+
+  .logo {
+    margin: 0 2rem 0 2rem;
+  }
+
+  .hamburger {
+    border: none;
+    &:focus {
+      box-shadow: none;
+    }
+
+    mat-icon {
+      font-size: 28px;
+    }
+  }
+  .navigation-bar{
+    justify-content: space-around;
+
+    .search-container {
+
+      input {
+        width: 95%;
+      }
+
+      .btn {
+        border: none;
+        padding: 2px 0 0 0;
+        color: #DB4A2B;
+
+        mat-icon {
+          font-size: 30px !important;
+        }
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+
+    .navbar-nav {
+        margin-right: 0 !important;
+
+        .nav-item{
+          .nav-link{
+            padding: 1rem !important;
+            &.dropdown-toggle {
+              mat-icon {
+                  font-size: 26px !important; 
+              }
+              &::after {
+                  display: none !important;
+              }
+            }
+          }
+
+          .dropdown-menu {
+              right: -50px;
+          }   
+      }
+    }
+  }
+}
