@@ -1,5 +1,7 @@
 // media-queries
 
+
+//header search container
 .search-container {
     @media (min-width: 992px) {
       width: 50%;
@@ -10,3 +12,31 @@
       padding-left: 15px;
     }
   }
+
+//home media queries
+@media (max-width: 580px) {
+  .btn-responsive {
+      font-size: 12px;
+      padding: 3px 8px;
+  }
+
+  p {
+      display:none;
+  }
+
+  .slideshow-1 {
+      top: 50% !important;
+  }
+}
+
+//Animations
+@mixin move-words-animation {
+  @keyframes move-words {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+}

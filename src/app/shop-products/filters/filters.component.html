@@ -1,0 +1,24 @@
+<div class="filters">
+    <button class="btn btn-secondary filter-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Apply Filters</button>
+    <div class="offcanvas offcanvas-top filter-overlay" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+        <div class="offcanvas-header filter-heading">
+            <img src="../../assets/shop-logo.png" width="40" height="40" /><h5 id="offcanvasTopLabel">{{applyLabel}}</h5>
+            <button *ngIf="selectedOptions.length > 0" class="clear-filters-btn" (click)="clearFilters()"><mat-icon>delete</mat-icon></button>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body filter-content">
+            <div *ngFor="let filter of filterData" class="filter-group">
+                <h6>{{ filter.heading }}</h6>
+                <div class="filter-options">
+                  <div *ngFor="let option of filter.options" class="filter-option">
+                    <!-- <label>
+                      <input type="checkbox" [value]="option" /> -->
+                      <mat-checkbox class="filter-checkbox" [checked]="isFilterSelected(option)" (change)="toggleFilterOptionSelection(option)" [value]="option">{{ option }}</mat-checkbox>
+                      <!-- {{ option }}
+                    </label> -->
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

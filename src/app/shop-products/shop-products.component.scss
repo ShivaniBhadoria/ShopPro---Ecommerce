@@ -1,0 +1,24 @@
+.shop-products-container {
+    height: 100%;
+    width: 100%;
+    padding-top: 5rem;
+    height: 100vh;
+
+    .shop-products-actions {
+        display: flex;
+        justify-content: space-around;
+        padding: 2rem 0;
+        border: 1px solid grey;
+
+        .sorting {
+            .sort-btn {
+                width: 165px;
+            }
+        }
+    }
+}
+
+.btn{
+    border-radius: 0;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+}

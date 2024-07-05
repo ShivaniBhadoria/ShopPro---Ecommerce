@@ -1,3 +1,109 @@
-.home {
-    height: 100vh;
+@import '../../assets/css/mixins';
+@import '../../assets/css/variables';
+
+.home-container {
+    height: 100%;
+    width: 100%;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    .image-slideshow {
+
+        img {
+            max-height: 600px;
+            object-fit: cover;
+        }
+
+        .slideshow-1 {
+            width: 40%;
+            left: 0;
+            top: 40%;
+        }
+
+        .slideshow-2 {
+            width: 40%;
+            top: 40%;
+        }
+
+        .slideshow-3 {
+            width: 30%;
+            left: 65%;
+            top: 20%;
+        }
+    }
+
+    .offer-zone {
+            text-align: center;
+        h1 {
+            text-align: center;
+            margin: 3rem;
+            font-weight: 900;
+            letter-spacing: 9px;
+        }
+    
+        .row {
+            justify-content: space-evenly;
+            .offers {
+                width: 18rem;
+                padding: 0;
+                margin: 1rem;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+
+                .content {
+                    display: flex;
+                    flex-direction: column;
+
+                    h5, p {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .featured-brands{
+        h1 {
+            text-align: center;
+            margin: 3rem;
+            font-weight: 900;
+            letter-spacing: 9px;
+        }
+
+        .brandnames {
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            white-space: nowrap;
+            padding: 2rem 0;
+            background-color:rgb(32, 30, 30);
+            color: rgb(154, 153, 153);
+            // border-radius: 40px;
+    
+            .brands {
+                font-size: 18px;
+                font-weight: 700;
+                animation: move-words 15s linear infinite;
+                @include move-words-animation;
+            }
+            .brands span {
+                margin: 0 35px;
+            }
+        }
+    }
+}
+
+p {
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 1rem;
+}
+
+.btn{
+    border-radius: 0;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.1);
 }

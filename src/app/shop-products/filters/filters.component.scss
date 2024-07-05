@@ -1,0 +1,62 @@
+.filters {
+    .filter-btn {
+        width: 165px;
+    }
+
+    .filter-heading {
+        border-bottom: 2px solid #DB4A2B;
+        box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        h5 {
+            margin-bottom: 0;
+            padding-left: 10px;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+    }
+
+    .filter-overlay {
+        padding: 0 1.5rem 2rem 2rem;
+        height: 20rem;
+    }
+
+    .filter-content {
+
+        h6 {
+            margin-top: 0.5rem 0 1rem 0;
+            font-weight: 700;
+        }
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 1rem;
+
+            .filter-option {
+                flex: 0 1 auto;
+                white-space: nowrap;
+
+                .filter-checkbox {
+                    ::ng-deep .mdc-form-field>label  {
+                        padding-left: 9px;
+                    }
+                }
+            }
+          }
+    }
+}
+
+.btn{
+    border-radius: 0;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+}
+
+.clear-filters-btn {
+    color: #DB4A2B;
+    border: none;
+    background-color: transparent;
+    padding-left: 3px;
+
+    mat-icon {
+      vertical-align: bottom;
+    }
+}

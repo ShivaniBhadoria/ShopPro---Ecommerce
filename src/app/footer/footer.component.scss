@@ -1,0 +1,67 @@
+.footer{
+    background-color: #f1f1f1;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    padding-top: 2rem;
+    .container {
+        padding-bottom: 0.5rem;
+        .perks-con {
+            padding-left: 20px;
+            .perks {
+                display: flex;
+
+                mat-icon {
+                    font-size: 26px;
+                    width: 25px;
+                }
+        
+                p {
+                    padding-left: 10px;
+                }
+            }
+        }
+        
+        col {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .social {
+            ul {
+                margin-top: 10px;
+
+                li:first-child {
+                    padding-bottom: 5px;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        .links {
+            ul {
+                li:first-child {
+                    padding-bottom: 5px;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        .download-app {
+            padding-left: 45px;
+
+            .payment-label {
+                margin-top: 9px;
+                font-weight: 700;
+                margin-bottom: 8px;
+            }
+        }
+    }
+    .copyright {
+        background-color: #edecec;
+        p {
+            text-align: center;
+            margin-bottom: 0;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+    }
+}

@@ -10,6 +10,10 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { LoginRegisterComponent } from './auth-templates/login-register/login-register.component';
+import { ShopProductsComponent } from './shop-products/shop-products.component';
+import { FiltersComponent } from './shop-products/filters/filters.component';
+import { ProductListComponent } from './shop-products/product-list/product-list.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -18,13 +22,17 @@ import { LoginRegisterComponent } from './auth-templates/login-register/login-re
     FooterComponent,
     HomeComponent,
     AdminPanelComponent,
-    LoginRegisterComponent
+    LoginRegisterComponent,
+    ShopProductsComponent,
+    FiltersComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule
   ],
   providers: [
     provideClientHydration()
