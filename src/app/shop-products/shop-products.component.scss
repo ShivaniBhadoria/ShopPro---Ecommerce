@@ -2,7 +2,7 @@
     height: 100%;
     width: 100%;
     padding-top: 5rem;
-    height: 100vh;
+    min-height: 100vh;
 
     .shop-products-actions {
         display: flex;
@@ -13,6 +13,9 @@
         .sorting {
             .sort-btn {
                 width: 165px;
+            }
+            .sort-dropdown {
+                cursor: pointer;
             }
         }
     }

@@ -1,1 +1,22 @@
-<p>product-list works!</p>
+<div class="products">
+    <div class="row product-row">
+        <div *ngFor="let product of productData"  class="card product-card">
+            <a [routerLink]="['']">
+                <img [src]="product.path" class="card-img-top" width="264" height="400" [alt]="product.title">
+            </a>
+            <div class="card-body content">
+                <h6 class="card-title">{{ product.title }}</h6>
+                <p>{{ product.price }}</p>
+                <p>{{ product.discount }}</p>
+                <p>{{ product.ratings }}</p>
+                <p>{{ product.popularity }}</p>
+                <p>Discounted Price:</p>
+                <p>{{ product.discountedPrice }}</p>
+                <a href="#" class="btn btn-danger">Add To Cart</a>
+            </div>
+        </div>
+    </div>
+    <div class="no-products-found" *ngIf="productData.length === 0">
+        <p>no product found</p>
+    </div>
+</div>

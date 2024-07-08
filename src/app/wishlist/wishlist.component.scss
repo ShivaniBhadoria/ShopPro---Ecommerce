@@ -1,0 +1,33 @@
+.products {
+    height: 100%;
+    width: 100%;
+    padding: 7rem 2rem 2rem 2rem;
+    min-height: 100vh;
+
+    .product-row {
+        justify-content: space-evenly;
+        .product-card {
+            width: 18rem;
+            padding: 0;
+            margin: 1rem;
+            border: none;
+
+            // &:hover {
+            //     transform: scale(1.08);
+            // }
+            .content {
+                display: flex;
+                flex-direction: column;
+
+                h6, p {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+.btn{
+    border-radius: 0;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+}

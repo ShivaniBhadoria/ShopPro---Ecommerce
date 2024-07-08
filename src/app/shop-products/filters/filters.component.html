@@ -11,11 +11,7 @@
                 <h6>{{ filter.heading }}</h6>
                 <div class="filter-options">
                   <div *ngFor="let option of filter.options" class="filter-option">
-                    <!-- <label>
-                      <input type="checkbox" [value]="option" /> -->
-                      <mat-checkbox class="filter-checkbox" [checked]="isFilterSelected(option)" (change)="toggleFilterOptionSelection(option)" [value]="option">{{ option }}</mat-checkbox>
-                      <!-- {{ option }}
-                    </label> -->
+                      <mat-checkbox class="filter-checkbox" [checked]="isFilterSelected({ filterType: filter.id, value: option })" (change)="toggleFilterOptionSelection(option, filter.id, $event)" [value]="option">{{ option }}</mat-checkbox>
                   </div>
                 </div>
             </div>

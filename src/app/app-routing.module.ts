@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { LoginRegisterComponent } from './auth-templates/login-register/login-register.component';
 import { ShopProductsComponent } from './shop-products/shop-products.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,9 @@ const routes: Routes = [
     
   },
   { path: 'shop', component: ShopProductsComponent 
+    
+  },
+  { path: 'wishlist', component: WishlistComponent 
     
   },
   {

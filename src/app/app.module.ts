@@ -14,6 +14,9 @@ import { ShopProductsComponent } from './shop-products/shop-products.component';
 import { FiltersComponent } from './shop-products/filters/filters.component';
 import { ProductListComponent } from './shop-products/product-list/product-list.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { HttpClientModule } from '@angular/common/http';
+import { WishlistComponent } from './wishlist/wishlist.component';
+import { ProductService } from './services/product-list-data.service';
 
 @NgModule({
   declarations: [
@@ -25,17 +28,21 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     LoginRegisterComponent,
     ShopProductsComponent,
     FiltersComponent,
-    ProductListComponent
+    ProductListComponent,
+    WishlistComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     MatIconModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    HttpClientModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    ProductService
+
   ],
   bootstrap: [AppComponent]
 })

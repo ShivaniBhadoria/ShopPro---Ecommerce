@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ProductService } from '../../services/product-list-data.service';
 
 @Component({
   selector: 'app-product-list',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrl: './product-list.component.scss'
 })
 export class ProductListComponent {
+  @Input()productData: any[] = [];
+
+  constructor() {}
+
+  ngOnInit(): void {
+   
+  }
 
 }
