@@ -9,33 +9,38 @@ import { OfferCard } from '../models/product.model';
 })
 export class HomeComponent {
 
-  constructor() {}
-
   offerCards: OfferCard[] = [
     {
       imgSrc: '../assets/home/card-1.jpg',
       title: 'Handbags',
       text: 'MIN 40% OFF',
-      link: ''
+      link: 'shop',
+      queryParams: { source: 'handbags-offer'}
     },
     {
       imgSrc: '../assets/home/card-2.jpg',
       title: 'Sneakers',
       text: 'STARTING ₹1899',
-      link: ''
+      link: 'shop', 
+      queryParams: { source: 'shoes-offer'}
     },
     {
       imgSrc: '../assets/home/card-3.jpg',
       title: 'Watches',
       text: 'FLAT 50% OFF',
-      link: ''
+      link: 'shop',
+      queryParams: { source: 'watches-offer'}
     },
     {
       imgSrc: '../assets/home/card-4.jpg',
       title: 'Makeup',
       text: 'STARTING ₹500',
-      link: ''
+      link: 'shop',
+      queryParams: { source: 'makeup-offer'}
     }
   ];
+
+  constructor() {}
+
 
 }

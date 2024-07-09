@@ -11,21 +11,21 @@
                 <img src="../assets/home/slideshow-1.jpg" class="d-block w-100" alt="slide-1">
                 <div class="carousel-caption d-md-block slideshow-1">
                   <p class="shop-desc">Find Your Perfect Look with Our Exclusive Women's Fashion!</p>
-                  <button class="btn btn-danger btn-responsive" [routerLink]="['']">Shop For Women</button>
+                  <button class="btn btn-danger btn-responsive" [routerLink]="['shop']" [queryParams]="{ source: 'shop-women' }">Shop For Women</button>
                 </div>
               </div>
               <div class="carousel-item">
                 <img src="../assets/home/slideshow-2.jpg" class="d-block w-100" alt="slide-2">
                 <div class="carousel-caption d-md-block slideshow-2">
                   <p class="shop-desc">Explore Unique and Trendy Men's Fashion Collections!</p>
-                  <button class="btn btn-danger btn-responsive" [routerLink]="['']">Shop For Men</button>
+                  <button class="btn btn-danger btn-responsive" [routerLink]="['shop']" [queryParams]="{ source: 'shop-men' }">Shop For Men</button>
                 </div>
               </div>
               <div class="carousel-item">
                 <img src="../assets/home/slideshow-3.jpg" class="d-block w-100" alt="slide-3">
                 <div class="carousel-caption d-md-block slideshow-3">
                   <p>Discover the Latest and Most Exciting Lifestyle and Accessories Collections!</p>
-                  <button class="btn btn-danger btn-responsive" [routerLink]="['']">Explore Now</button>
+                  <button class="btn btn-danger btn-responsive" [routerLink]="['shop']" [queryParams]="{ source: 'shop-accessories' }">Explore Now</button>
                 </div>
               </div>
             </div>
@@ -49,7 +49,7 @@
             <div class="card-body content">
               <h5 class="card-title">{{ offerCard.title }}</h5>
               <p class="card-text">{{ offerCard.text }}</p>
-              <a [routerLink]="[offerCard.link]" class="btn btn-danger">Shop Now</a>
+              <a [routerLink]="[offerCard.link]" [queryParams]="offerCard.queryParams" class="btn btn-danger">Shop Now</a>
             </div>
           </div>
       </div>

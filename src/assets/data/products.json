@@ -603,6 +603,30 @@
             "occasion": ["Casual", "Wedding"],
             "material": "Chiffon",
             "isAddedToWishlist": true
+        },
+        {
+            "id": 21,
+            "path": "assets/products/product-21.jpg",
+            "title": "Super Glossy Lipstick",
+            "description": "Discover the allure of glossy lipstick that adds a luscious shine to your lips. Whether you're looking to make a statement or enhance your everyday look, our glossy lipstick promises to deliver a brilliant finish that complements every smile.",
+            "category": "Makeup",
+            "gender": "Women",
+            "price": 4200,
+            "brand": "VibeMax",
+            "colorsAvailable": [
+                "Red",
+                "Orange"
+            ],
+            "sizeAvailable": [
+                "S"
+            ],
+            "ratings": 5,
+            "popularity": 8,
+            "discount": 60,
+            "isNewArrival": true,
+            "occasion": ["Party", "Wedding"],
+            "material": "Other",
+            "isAddedToWishlist": false
         }
     ]   
 }

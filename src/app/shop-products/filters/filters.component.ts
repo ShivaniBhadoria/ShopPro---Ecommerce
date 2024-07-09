@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-filters',
@@ -9,13 +9,37 @@ export class FiltersComponent {
   @Input()filterData: any[] = [];
   @Input()productData: any[] = [];
   @Output() productDataChange: EventEmitter<any[]> = new EventEmitter<any[]>();
+  @Input() source: string = "";
   selectedOptions: any[] = []; 
   applyLabel = 'APPLY FILTERS';
-  filteredproductsSet: Set<any> = new Set();
+  filteredProductsSet: Set<any> = new Set();
 
   constructor() {}
 
-  ngOnInit(): void {
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['productData'] && changes['productData'].currentValue?.length > 0 && this.source) {
+      this.applySourceFilter();
+    }
+  }
+
+  applySourceFilter(): void {
+    const sourceMappings: { [key: string]: { option: string, filterType: string } } = {
+      'shop-women': { option: "Women", filterType: "gender" },
+      'shop-men': { option: "Men", filterType: "gender" },
+      'shop-accessories': { option: "Accessories", filterType: "category" },
+      'shoes-offer': { option: "Shoes", filterType: "category" },
+      'makeup-offer': { option: "Makeup", filterType: "category" }
+    };
+  
+    const mapping = sourceMappings[this.source];
+    if (mapping) {
+      const selectedOption = {
+        option: mapping.option,
+        filterType: mapping.filterType,
+        isChecked: { checked: true }
+      };
+      this.toggleFilterOptionSelection(selectedOption.option, selectedOption.filterType, selectedOption.isChecked);
+    }
   }
 
   isFilterSelected(selectedOption: any): boolean {
@@ -40,82 +64,8 @@ export class FiltersComponent {
     this.applyLabel = this.selectedOptions.length > 0 ? 'CLEAR FILTERS' : 'APPLY FILTERS';
   }
 
-  // filterProducts(selectedOption: any) {
-  //   let filteredProducts = this.productData;
-
-  //   if(selectedOption.isChecked){
-  //     switch (selectedOption.filterType) {
-  //       case 'gender':
-  //         filteredProducts = filteredProducts.filter(product => product.gender === selectedOption.value);
-  //         break;
-  //       case 'category':
-  //         filteredProducts = filteredProducts.filter(product => product.category === selectedOption.value);
-  //         break;
-  //       case 'brand':
-  //         filteredProducts = filteredProducts.filter(product => product.brand === selectedOption.value);
-  //         break;
-  //       case 'material':
-  //         filteredProducts = filteredProducts.filter(product => product.material === selectedOption.value);
-  //         break;
-  //       case 'colorsAvailable':
-  //         filteredProducts = filteredProducts.filter(product => product.colorsAvailable.includes(selectedOption.value));
-  //         break;
-  //       case 'sizeAvailable':
-  //         filteredProducts = filteredProducts.filter(product => product.sizeAvailable.includes(selectedOption.value));
-  //         break;
-  //       case 'occasion':
-  //         filteredProducts = filteredProducts.filter(product => product.occasion.includes(selectedOption.value));
-  //       break;
-  //       case 'price':
-  //         if(selectedOption.value === "0-10k"){
-  //           filteredProducts = filteredProducts.filter(product => product.price >= 0 && product.price < 10000);
-  //         } else if(selectedOption.value === "10k-20k") {
-  //           filteredProducts = filteredProducts.filter(product => product.price >= 10000 && product.price < 20000);
-  //         } else if(selectedOption.value === "20k-30k") {
-  //           filteredProducts = filteredProducts.filter(product => product.price >= 20000 && product.price < 30000);
-  //         } else if(selectedOption.value === "30k-40k") {
-  //           filteredProducts = filteredProducts.filter(product => product.price >= 30000 && product.price < 40000);
-  //         } else if(selectedOption.value === "40k-50k") {
-  //           filteredProducts = filteredProducts.filter(product => product.price >= 40000 && product.price < 50000);
-  //         } else {
-  //           filteredProducts = filteredProducts.filter(product => product.price > 50000);
-  //         }
-  //       break;
-  //       case 'discount':
-  //         if(selectedOption.value === "10% and above"){
-  //           filteredProducts = filteredProducts.filter(product => product.discount >= 10);
-  //         } else if(selectedOption.value === "20% and above") {
-  //           filteredProducts = filteredProducts.filter(product => product.discount >= 20);
-  //         } else if(selectedOption.value === "30% and above") {
-  //           filteredProducts = filteredProducts.filter(product => product.discount >= 30);
-  //         } else if(selectedOption.value === "40% and above") {
-  //           filteredProducts = filteredProducts.filter(product => product.discount >= 40);
-  //         } else {
-  //           filteredProducts = filteredProducts.filter(product => product.discount >= 50);
-  //         }
-  //       break;
-  //       case 'ratings':
-  //         if(selectedOption.value === "1 star and above"){
-  //           filteredProducts = filteredProducts.filter(product => product.ratings >= 1);
-  //         } else if(selectedOption.value === "2 star and above") {
-  //           filteredProducts = filteredProducts.filter(product => product.ratings >= 2);
-  //         } else if(selectedOption.value === "3 star and above") {
-  //           filteredProducts = filteredProducts.filter(product => product.ratings >= 3);
-  //         } else if(selectedOption.value === "4 star and above") {
-  //           filteredProducts = filteredProducts.filter(product => product.ratings >= 4);
-  //         } else {
-  //           filteredProducts = filteredProducts.filter(product => product.ratings >= 4.5);
-  //         }
-  //       break;
-  //     }
-  //   }
-
-  // console.log(filteredProducts);
-
-  // }
-
   filterProducts(selectedOption: any) {
-     let filteredProducts = this.productData;
+    let filteredProducts = this.productData;
 
     const filterTypes = {
       'gender': (product: { gender: any; }) => product.gender === selectedOption.value,
@@ -139,22 +89,27 @@ export class FiltersComponent {
       if (filterFunction) {
         if (selectedOption.isChecked) {
           const tempFilteredProducts = filteredProducts.filter(filterFunction);
-          tempFilteredProducts.forEach(product => this.filteredproductsSet.add(product));
-        } else {
-          const tempFilteredProducts = filteredProducts.filter(filterFunction);
-          tempFilteredProducts.forEach(product => this.filteredproductsSet.delete(product));
+          tempFilteredProducts.forEach(product => this.filteredProductsSet.add(product));
+
+        } else {//to handle if a product matches two filters and one selected and other is removed?
+          const tempFilteredProducts = filteredProducts.filter(filterFunction);//compare with selected options
+          tempFilteredProducts.forEach(product => this.filteredProductsSet.delete(product));//Removes all filtered products
         }
       }
 
+    if(this.selectedOptions.length === 0){
+      this.productDataChange.emit(this.productData);
+    } else {
+      this.productDataChange.emit(Array.from(this.filteredProductsSet));
+    }
 
-    // console.log('filteredSet', this.filteredproductsSet);
-    this.productDataChange.emit(Array.from(this.filteredproductsSet));
+    console.log(this.filteredProductsSet);
   }
   
 
   clearFilters() {
     this.selectedOptions = [];
-    this.filteredproductsSet.clear();
+    this.filteredProductsSet.clear();
     this.applyLabel = 'APPLY FILTERS';
     this.productDataChange.emit(this.productData);
   }

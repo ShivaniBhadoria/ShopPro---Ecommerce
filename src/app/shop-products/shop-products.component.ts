@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FILTER_DATA } from './filter-data';
 import { Product } from '../models/product.model';
+import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../services/product-list-data.service';
 
 @Component({
@@ -14,18 +15,25 @@ export class ShopProductsComponent implements OnInit {
   isSortDropdownOpen: boolean = false;
   productData: Product[] = [];
   updatedProductData: Product[] = [];
+  sortedByText: string = "Default";
+  isLoading = false;
+  source: string = "";
+
   sortOptions: { id: string, text: string }[] = [
     { id: 'new', text: "What's New" },
     { id: 'priceLowToHigh', text: 'Price: Low to High' },
     { id: 'priceHighToLow', text: 'Price: High to Low' },
     { id: 'discount', text: 'Discount' },
     { id: 'popularity', text: 'Popularity' },
-    { id: 'ratings', text: 'Ratings' }
+    { id: 'ratings', text: 'Ratings' },
+    { id: 'default', text: 'Default' }
   ];
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.isLoading = true;
+
     this.productService.getProducts().subscribe(data => {
       this.productData = data.productDetails.map((product: any) => {
         return {
@@ -34,6 +42,11 @@ export class ShopProductsComponent implements OnInit {
         };
       });
       this.updatedProductData = [...this.productData];
+      //Get queryParams from source
+      this.route.queryParams.subscribe(params => {
+        this.source = params['source'];
+      });
+      this.isLoading = false;
     });
   }
 
@@ -46,33 +59,31 @@ export class ShopProductsComponent implements OnInit {
     return discountedPrice;
   }
 
-  sortItems(event: Event, id: string): void {
-    event.preventDefault();
+  sortItems(event: Event | null = null, id: string = 'default', text:string = 'Default'): void {
+    if (event) {
+      event.preventDefault();
+    }
+    const sortCriteria: { [key: string]: (a: any, b: any) => number } = {
+      'priceLowToHigh': (a, b) => a.discountedPrice - b.discountedPrice,
+      'priceHighToLow': (a, b) => b.discountedPrice - a.discountedPrice,
+      'ratings': (a, b) => b.ratings - a.ratings,
+      'popularity': (a, b) => b.popularity - a.popularity,
+      'discount': (a, b) => b.discount - a.discount,
+      'default': (a, b) => a.id - b.id,
+    };
   
-    switch (id) {
-      case 'priceLowToHigh':
-        this.productData.sort((a: { discountedPrice: number; }, b: { discountedPrice: number; }) => a.discountedPrice - b.discountedPrice);
-        break;
-      case 'priceHighToLow':
-        this.productData.sort((a: { discountedPrice: number; }, b: { discountedPrice: number; }) => b.discountedPrice - a.discountedPrice);
-        break;
-      case 'ratings':
-        this.productData.sort((a: { ratings: number; }, b: { ratings: number; }) => b.ratings - a.ratings);
-        break;
-      case 'popularity':
-        this.productData.sort((a: { popularity: number; }, b: { popularity: number; }) => b.popularity - a.popularity);
-        break;
-      case 'discount':
-        this.productData.sort((a: { discount: number; }, b: { discount: number; }) => b.discount - a.discount);
-        break;
-      default:
-        this.productData.sort((a: { id: number; }, b: { id: number; }) => a.id - b.id);
-        break;
+    const sortFunction = sortCriteria[id] || sortCriteria['default'];
+    if(this.updatedProductData.length > 0){
+      this.updatedProductData.sort(sortFunction);
+      this.productService.setSortId(id, text);
+      this.sortedByText = text;
+    } else {
+      this.sortedByText = 'No Products found!';
     }
   }
 
   onProductDataChange(updatedProductData: any[]) {
-    console.log(updatedProductData);
     this.updatedProductData = JSON.parse(JSON.stringify(updatedProductData));
+    this.sortItems(null, this.productService?.getSortId().sortId, this.productService?.getSortId().sortText);
   }
 }

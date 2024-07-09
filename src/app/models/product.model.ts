@@ -24,4 +24,5 @@ export interface OfferCard {
     title: string;
     text: string;
     link: string;
+    queryParams: object;
 }

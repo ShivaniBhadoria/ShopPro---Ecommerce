@@ -11,7 +11,7 @@ export const FILTER_DATA = [
       options: [
         'Tshirts', 'Shirts', 'Skirts', 'Tops', 'Trousers', 'Dresses', 'Jeans',
         'Co-ords', 'Blazers', 'Sarees', 'Kurta-Sets', 'Heels',
-        'Shoes', 'Flats', 'makeup', 'Accessories'
+        'Shoes', 'Flats', 'Makeup', 'Accessories'
       ]
     },
     {
@@ -19,7 +19,7 @@ export const FILTER_DATA = [
       heading: 'Brand',
       options: [
         'BrightBox', 'PureWave', 'ClearLine', 'QuickPulse', 'SunnySide', 'BrightEra',
-        'ClearEdge', 'NextStep'
+        'ClearEdge', 'NextStep', 'VibeMax'
       ]
     },
     {
@@ -32,7 +32,7 @@ export const FILTER_DATA = [
     {
       id: 'colorsAvailable',
       heading: 'Color',
-      options: ['Blac000', 'White', 'Red', 'Green', 'Pink', 'Grey', 'Blue', 'Yellow', 'Orange', 'Violet', 'Silver', 'Golden', 'Multicolor']
+      options: ['Black', 'White', 'Red', 'Green', 'Pink', 'Grey', 'Blue', 'Yellow', 'Orange', 'Violet', 'Silver', 'Golden', 'Multicolor']
     },
     {
       id: 'sizeAvailable',
