@@ -1,23 +1,38 @@
 .shop-products-container {
     height: 100%;
     width: 100%;
-    padding-top: 5rem;
+    padding-top: 7rem;
     min-height: 100vh;
 
     .shop-products-actions {
         display: flex;
         justify-content: space-around;
-        padding: 2rem 0;
-        border: 1px solid grey;
+        align-content: center;
+        flex-wrap: wrap;
 
         .sorting {
+            padding-bottom: 1.5rem;
             .sort-btn {
-                width: 200px;///165
+                width: 220px;
                 text-overflow: ellipsis;
                 overflow: hidden;
+                font-size: 14px;
+                background-color: transparent;
+                color: black;
+                border-color: rgb(167, 163, 163);
             }
             .sort-dropdown {
                 cursor: pointer;
+                min-width: 13.8rem;
+
+                .dropdown-item {
+                    font-size:15px;
+
+                    &:hover, &:focus {
+                        background-color:#DB4A2B;
+                        color: white;
+                    }
+                }
             }
         }
     }

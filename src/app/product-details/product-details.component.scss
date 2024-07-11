@@ -1,0 +1,53 @@
+.product-details {
+    height: 100%;
+    width: 100%;
+    padding-top: 7rem;
+    min-height: 100vh;
+
+    .container {
+        border: 1px solid grey;
+
+        .col-12 {
+            border: 1px solid red;
+
+            &.product-deets {
+                .product-overview {
+
+                    .price-details {
+                        font-size: 18px;
+                        margin-bottom: 0.5rem;
+                        display: inline-flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 15rem;
+                        span {
+                            &.discounted-price {
+                                font-weight: bold;
+                            }
+    
+                            &.price {
+                                font-size: 16px;
+                                color: grey;
+                                text-decoration: line-through;
+                            }
+    
+                            &.discount {
+                                font-size: 16px;
+                                color: #DB4A2B;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+  
+    mat-icon {
+      color: gold;
+    }
+  }

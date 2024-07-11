@@ -17,6 +17,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProductService } from './services/product-list-data.service';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ProductService } from './services/product-list-data.service';
     ShopProductsComponent,
     FiltersComponent,
     ProductListComponent,
-    WishlistComponent
+    WishlistComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -40,6 +40,11 @@ export class HomeComponent {
     }
   ];
 
+  brandNames: string[] = [
+    'BrightBox', 'PureWave', 'ClearLine', 'QuickPulse', 'SunnySide', 
+    'BrightEra', 'ClearEdge', 'NextStep', 'VibeMax'
+  ];
+
   constructor() {}
 
 

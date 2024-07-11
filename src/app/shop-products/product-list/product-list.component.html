@@ -1,22 +1,34 @@
 <div class="products">
     <div class="row product-row">
         <div *ngFor="let product of productData"  class="card product-card">
-            <a [routerLink]="['']">
+            <a [routerLink]="['/product-details', product.id]">
                 <img [src]="product.path" class="card-img-top" width="264" height="400" [alt]="product.title">
             </a>
             <div class="card-body content">
-                <h6 class="card-title">{{ product.title }}</h6>
-                <p>{{ product.price }}</p>
-                <p>{{ product.discount }}</p>
-                <p>{{ product.ratings }}</p>
-                <p>{{ product.popularity }}</p>
-                <p>Discounted Price:</p>
-                <p>{{ product.discountedPrice }}</p>
-                <a href="#" class="btn btn-danger">Add To Cart</a>
+                <h6 class="card-title">{{ product.brand }}</h6>
+                <p>{{ product.title }}</p>
+                <div class="price-details">
+                    <span class="discounted-price">Rs. {{ product.discountedPrice }}</span>
+                    <span class="price">Rs. {{ product.price }}</span>
+                    <span class="discount">({{ product.discount }}% OFF)</span>
+                </div>
+                <button class="btn btn-danger">Add To Cart</button>
+            </div>
+            <div class="card-body content ratings">
+                <div class="rate">
+                    <span>{{ product.ratings }}<mat-icon>star_rate</mat-icon><span>| {{ product.reviewCount }}</span></span>
+                    <span *ngIf="product.popularity > 7">Only Few Left!</span>
+                </div>
+                <div class="wishlist-add">
+                    <mat-icon *ngIf="!product.isAddedToWishlist" (click)="toggleWishlist(product, true)" >favorite_outline</mat-icon>
+                    <mat-icon *ngIf="product.isAddedToWishlist" (click)="toggleWishlist(product, false)" >favorite</mat-icon>
+                </div>
+            </div>
+            <div class="card-body content overlay" [routerLink]="['/product-details', product.id]">
             </div>
         </div>
     </div>
     <div class="no-products-found" *ngIf="productData.length === 0">
-        <p>no product found</p>
+            <p>No Products Found!</p>
     </div>
 </div>

@@ -28,7 +28,9 @@ export class FiltersComponent {
       'shop-men': { option: "Men", filterType: "gender" },
       'shop-accessories': { option: "Accessories", filterType: "category" },
       'shoes-offer': { option: "Shoes", filterType: "category" },
-      'makeup-offer': { option: "Makeup", filterType: "category" }
+      'makeup-offer': { option: "Makeup", filterType: "category" },
+      'handbags-offer': { option: "Accessories", filterType: "category" },
+      'watches-offer': { option: "Accessories", filterType: "category" }//multiple filters
     };
   
     const mapping = sourceMappings[this.source];
@@ -67,7 +69,7 @@ export class FiltersComponent {
   filterProducts(selectedOption: any) {
     let filteredProducts = this.productData;
 
-    const filterTypes = {
+    const filterTypes = {//Debug this 
       'gender': (product: { gender: any; }) => product.gender === selectedOption.value,
       'category': (product: { category: any; }) => product.category === selectedOption.value,
       'brand': (product: { brand: any; }) => product.brand === selectedOption.value,
@@ -85,25 +87,23 @@ export class FiltersComponent {
       'ratings': (product: { ratings: number; }) => product.ratings >= parseFloat(selectedOption.value),
     };
     
-      const filterFunction = filterTypes[selectedOption.filterType as keyof typeof filterTypes];
-      if (filterFunction) {
-        if (selectedOption.isChecked) {
-          const tempFilteredProducts = filteredProducts.filter(filterFunction);
-          tempFilteredProducts.forEach(product => this.filteredProductsSet.add(product));
+    const filterFunction = filterTypes[selectedOption.filterType as keyof typeof filterTypes];
+    if (filterFunction) {
+      if (selectedOption.isChecked) {
+        const tempFilteredProducts = filteredProducts.filter(filterFunction);
+        tempFilteredProducts.forEach(product => this.filteredProductsSet.add(product));
 
-        } else {//to handle if a product matches two filters and one selected and other is removed?
-          const tempFilteredProducts = filteredProducts.filter(filterFunction);//compare with selected options
-          tempFilteredProducts.forEach(product => this.filteredProductsSet.delete(product));//Removes all filtered products
-        }
+      } else {//to handle if a product matches two filters and one selected and other is removed?
+        const tempFilteredProducts = filteredProducts.filter(filterFunction);
+        tempFilteredProducts.forEach(product => this.filteredProductsSet.delete(product));//Removes all filtered products (remove all which doesn't match any active filter)
       }
+    }
 
     if(this.selectedOptions.length === 0){
       this.productDataChange.emit(this.productData);
     } else {
       this.productDataChange.emit(Array.from(this.filteredProductsSet));
     }
-
-    console.log(this.filteredProductsSet);
   }
   
 

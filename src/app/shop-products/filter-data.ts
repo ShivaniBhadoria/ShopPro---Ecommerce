@@ -32,12 +32,12 @@ export const FILTER_DATA = [
     {
       id: 'colorsAvailable',
       heading: 'Color',
-      options: ['Black', 'White', 'Red', 'Green', 'Pink', 'Grey', 'Blue', 'Yellow', 'Orange', 'Violet', 'Silver', 'Golden', 'Multicolor']
+      options: ['Black', 'White', 'Red', 'Green', 'Pink', 'Grey', 'Blue', 'Yellow', 'Orange', 'Violet', 'Silver', 'Gold']
     },
     {
       id: 'sizeAvailable',
       heading: 'Size',
-      options: ['XS', 'S', 'M', 'L', 'XL', 'XXL']
+      options: ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'Onesize']
     },
     {
       id: 'discount',

@@ -78,7 +78,7 @@ export class ShopProductsComponent implements OnInit {
       this.productService.setSortId(id, text);
       this.sortedByText = text;
     } else {
-      this.sortedByText = 'No Products found!';
+      this.sortedByText = '';
     }
   }
 

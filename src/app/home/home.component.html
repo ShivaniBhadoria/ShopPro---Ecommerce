@@ -7,21 +7,21 @@
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
-              <div class="carousel-item active">
+              <div class="carousel-item active" data-bs-interval="5000">
                 <img src="../assets/home/slideshow-1.jpg" class="d-block w-100" alt="slide-1">
                 <div class="carousel-caption d-md-block slideshow-1">
                   <p class="shop-desc">Find Your Perfect Look with Our Exclusive Women's Fashion!</p>
                   <button class="btn btn-danger btn-responsive" [routerLink]="['shop']" [queryParams]="{ source: 'shop-women' }">Shop For Women</button>
                 </div>
               </div>
-              <div class="carousel-item">
+              <div class="carousel-item" data-bs-interval="5000">
                 <img src="../assets/home/slideshow-2.jpg" class="d-block w-100" alt="slide-2">
                 <div class="carousel-caption d-md-block slideshow-2">
                   <p class="shop-desc">Explore Unique and Trendy Men's Fashion Collections!</p>
                   <button class="btn btn-danger btn-responsive" [routerLink]="['shop']" [queryParams]="{ source: 'shop-men' }">Shop For Men</button>
                 </div>
               </div>
-              <div class="carousel-item">
+              <div class="carousel-item" data-bs-interval="5000">
                 <img src="../assets/home/slideshow-3.jpg" class="d-block w-100" alt="slide-3">
                 <div class="carousel-caption d-md-block slideshow-3">
                   <p>Discover the Latest and Most Exciting Lifestyle and Accessories Collections!</p>
@@ -43,7 +43,7 @@
       <h1>OFFER ZONE</h1>
       <div class="row">
           <div *ngFor="let offerCard of offerCards" class="card offers">
-            <a [routerLink]="[offerCard.link]">
+            <a [routerLink]="[offerCard.link]" [queryParams]="offerCard.queryParams">
               <img [src]="offerCard.imgSrc" class="card-img-top" width="264" height="326" alt="..." />
             </a>
             <div class="card-body content">
@@ -57,36 +57,12 @@
     <div class="featured-brands">
       <h1>FEATURED BRANDS</h1>
       <div class="brandnames">
-        <div class="brands">
-          <span>BrightBox</span>
-          <span>PureWave</span>
-          <span>ClearLine</span>
-          <span>QuickPulse</span>
-          <span>SunnySide</span>
-          <span>BrightEra</span>
-          <span>ClearEdge</span>
-          <span>NextStep</span>
-          <span>VibeMax</span>
-        </div>
-        <div class="brands">
-            <span>BrightBox</span>
-            <span>PureWave</span>
-            <span>ClearLine</span>
-            <span>QuickPulse</span>
-            <span>SunnySide</span>
-            <span>BrightEra</span>
-            <span>ClearEdge</span>
-            <span>NextStep</span>
-            <span>VibeMax</span>
+        <div class="brands" *ngFor="let _ of [1, 2]">
+          <span *ngFor="let brand of brandNames">{{ brand }}</span>
         </div>
       </div>
       <div class="brand-links">
-        <!-- <div class="card" style="width: 18rem;">
-          <img src="../assets/card-4.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div> -->
+    
       </div>
     </div>
 </div>

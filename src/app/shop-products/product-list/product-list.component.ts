@@ -8,11 +8,16 @@ import { ProductService } from '../../services/product-list-data.service';
 })
 export class ProductListComponent {
   @Input()productData: any[] = [];
+  isAdded: boolean = false;
 
   constructor() {}
 
   ngOnInit(): void {
    
+  }
+
+  toggleWishlist(product: any, isAdded: boolean) {
+    product.isAddedToWishlist = isAdded;
   }
 
 }

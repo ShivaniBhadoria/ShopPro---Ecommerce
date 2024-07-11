@@ -15,6 +15,7 @@ export interface Product {
     isNewArrival: boolean;
     occasion: string[];
     material: string;
+    reviewCount: number;
     isAddedToWishlist: boolean;
     discountedPrice: number;
 }

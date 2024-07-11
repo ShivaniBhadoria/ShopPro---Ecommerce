@@ -1,6 +1,17 @@
 .filters {
+    padding-bottom: 1.5rem;
+
     .filter-btn {
-        width: 165px;
+        width: 220px;
+        font-size: 14px;
+        background-color: #DB4A2B;
+        border: none;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+            background-color: #e23d18;
+        }
     }
 
     .filter-heading {
