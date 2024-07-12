@@ -101,8 +101,23 @@
     }
 
     .no-products-found {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+
+        mat-icon {
+            font-size: 10rem;
+            height: 10rem;
+            width: 10rem;
+            color: #DB4A2B;
+        }
+
         p {
-            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
         }
     }
 }

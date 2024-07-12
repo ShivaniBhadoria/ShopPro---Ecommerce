@@ -26,29 +26,10 @@
           </div>
           <div class="col-12 col-md-6 product-deets">
             <div class="product-overview">
-              <h4>{{ product.brand }}</h4>
-              <h6>{{ product.title }}</h6>
-              <div class="price-details">
-                <span class="discounted-price">₹{{ product.discountedPrice }}</span>
-                <span class="price">₹{{ product.price }}</span>
-                <span class="discount">({{ product.discount }}% OFF)</span>
-              </div>
-              <h6>inclusive of all taxes</h6>
-              <div class="colors-available">
-                <h6>MORE COLORS</h6>
-                <div *ngFor="let color of product.colorsAvailable" class="color-box">
-                  <mat-icon [ngStyle]="{ 'color': color }">circle</mat-icon>{{ color }}
-                </div>
-              </div>
-              <div class="sizes-available">
-                <h6>SELECT SIZE</h6>
-                <div *ngFor="let size of product.sizeAvailable" class="size-box">
-                  {{ size }}
-                </div>
-              </div>
-            </div>
-            <div class="rating-container">
-              <h6>Ratings by {{product.reviewCount}} customers</h6>
+              <p>Shop/{{product.category}}</p>
+              <h3>{{ product.brand }}</h3>
+              <h5>{{ product.title }}</h5>
+              <div class="rating-container">
                 <ng-container *ngFor="let star of fullStars">
                   <mat-icon>star</mat-icon>
                 </ng-container>
@@ -58,6 +39,47 @@
                 <ng-container *ngFor="let star of emptyStars">
                   <mat-icon>star_border</mat-icon>
                 </ng-container>
+              </div>
+              <div class="price-details">
+                <span class="discounted-price">₹{{ product.discountedPrice }}</span>
+                <span class="price">₹{{ product.price }}</span>
+                <span class="discount">({{ product.discount }}% OFF)</span>
+              </div>
+              <p class="tax">inclusive of all taxes</p>
+              <div class="colors-available">
+                <h6>MORE COLORS</h6>
+                <mat-radio-group class="color-radio-group" [(ngModel)]="selectedColor" (change)="onColorChange($event)">
+                  <div *ngFor="let color of product.colorsAvailable" class="color-box">
+                    <mat-radio-button [value]="color" class="color-radio-button" [ngStyle]="{ '--color': color }">
+                    </mat-radio-button>
+                  </div>
+                </mat-radio-group>
+              </div>
+              <div class="sizes-available">
+                <h6>SELECT SIZE</h6>
+                <div class="size-details">
+                  <div class="dropdown" (mouseenter)="toggleSizingDropdown(true)" (mouseleave)="toggleSizingDropdown(false)" [class.show]="isSizeDropdownOpen">
+                    <button class="btn btn-secondary dropdown-toggle size-btn" type="button" mid="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Select Size: {{selectedSize}}
+                    </button>
+                    <ul class="dropdown-menu size-dropdown" aria-labelledby="dropdownMenuButton1" [class.show]="isSizeDropdownOpen">
+                        <li *ngFor="let size of product.sizeAvailable" (click)="selectSize(size)">
+                            <a class="dropdown-item">{{ size }}</a>
+                        </li>
+                    </ul>
+                  </div>
+                  <div class="size-chart">
+                    <a (click)="openSizeChart()">Size Chart</a>
+                  </div>
+                </div>
+              </div>
+              <div class="quantity-container">
+                <span>Quantity</span>
+                <button class="quantity-button" (click)="decreaseQuantity()">-</button>
+                <input type="number" class="quantity-input" [min]="minQuantity" 
+                  [max]="maxQuantity" [(ngModel)]="quantity" (ngModelChange)="updateQuantity($event)" />
+                <button class="quantity-button" (click)="increaseQuantity()">+</button>
+              </div>
             </div>
           </div>
         </div>

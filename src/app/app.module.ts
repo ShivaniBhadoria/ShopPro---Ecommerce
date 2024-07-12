@@ -18,6 +18,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProductService } from './services/product-list-data.service';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { MatRadioModule } from '@angular/material/radio';
+import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { SizeChartComponent } from './dialogs/size-chart/size-chart.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     FiltersComponent,
     ProductListComponent,
     WishlistComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    SizeChartComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,10 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     AppRoutingModule,
     MatIconModule,
     MatCheckboxModule,
-    HttpClientModule
+    HttpClientModule,
+    MatRadioModule,
+    FormsModule,
+    MatDialogModule
   ],
   providers: [
     provideClientHydration(),
