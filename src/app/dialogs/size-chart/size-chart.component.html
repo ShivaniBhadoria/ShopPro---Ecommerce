@@ -1,1 +1,27 @@
-<p>size-chart works!</p>
+<div class="size-chart-dialog">
+    <div class="heading">
+        <h6>Brand: {{ data.brand }}</h6>
+        <button (click)="closeDialog()"><mat-icon>close</mat-icon></button>
+    </div>
+    <header>
+        <button class="chart-btn active" (click)="showContent('sizeChart')" [ngClass]="{'active': selectedContent === 'sizeChart'}">Size Chart</button>
+        <button class="measure-btn" (click)="showContent('howToMeasure')" [ngClass]="{'active': selectedContent === 'howToMeasure'}">How to Measure</button>
+    </header>
+    <div *ngIf="selectedContent === 'sizeChart'" class="sizeChart">
+        <div *ngIf="data.gender === 'Men' || data.gender === 'Boys'" class="men-measure">
+            <img src="../../assets/men-size-chart.png" alt="men-measurement" width="450" height="450" />
+        </div>
+        <div *ngIf="data.gender === 'Women' || data.gender === 'Girls'" class="women-measure">
+            <img src="../../assets/women-size-chart.png" alt="women-measurement" width="450" height="450" />
+        </div>
+    </div>
+      
+    <div *ngIf="selectedContent === 'howToMeasure'" class="howToMeasure">
+        <div *ngIf="data.gender === 'Men' || data.gender === 'Boys'" class="men-measure">
+            <img src="../../assets/men-size.png" alt="men-measurement" width="350" height="350" />
+        </div>
+        <div *ngIf="data.gender === 'Women' || data.gender === 'Girls'" class="women-measure">
+            <img src="../../assets/women-size.png" alt="women-measurement" width="250" height="350" />
+        </div>
+    </div>
+</div>

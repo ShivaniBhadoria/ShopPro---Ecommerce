@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Product } from '../models/product.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  private jsonURL = 'assets/data/products.json';
+  private productsPath = 'assets/data/products.json';
+  private cartPath = 'assets/data/cart.json';
+  private cartItemCountSubject = new BehaviorSubject<any>(null);
+  cartItemCount$ = this.cartItemCountSubject.asObservable();
+
   public sortingDetails = {
     sortId: 'default',
     sortText: 'Default'
@@ -16,7 +20,11 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<{ productDetails: Product[] }> {
-    return this.http.get<{ productDetails: Product[] }>(this.jsonURL);
+    return this.http.get<{ productDetails: Product[] }>(this.productsPath);
+  }
+
+  getCartDetails(): Observable<{ cartItems: { cartItemCount: number, productsInCart: Product[] } }> {
+    return this.http.get<{ cartItems: { cartItemCount: number, productsInCart: Product[] } }>(this.cartPath);
   }
 
   setSortId(sortId:string, sortText:string) {
@@ -28,5 +36,9 @@ export class ProductService {
 
   getSortId() {
     return this.sortingDetails;
+  }
+
+  sendCartItemCount(data: any): void {
+    this.cartItemCountSubject.next(data);
   }
 }

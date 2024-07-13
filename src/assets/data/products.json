@@ -3,6 +3,8 @@
         {
             "id": 1,
             "path": "assets/products/product-1.jpg",
+            "path1": "assets/products/product-2.jpg",
+            "path2": "assets/products/product-3.jpg",
             "title": "Vibrant Chiffon Long Skirt",
             "description": "This vibrant multicolor chiffon long skirt features a flowing silhouette and an elastic waistband for comfort, perfect for adding a touch of elegance to any outfit.",
             "category": "Skirts",
@@ -12,7 +14,8 @@
             "colorsAvailable": [
                 "Green",
                 "Red",
-                "Yellow"
+                "Yellow",
+                "Blue"
             ],
             "sizeAvailable": [
                 "S",
@@ -28,11 +31,14 @@
             "occasion": ["Casual", "Party"],
             "material": "Chiffon",
             "reviewCount": 234,
-            "isAddedToWishlist": true
+            "isAddedToWishlist": true,
+            "isAddedToCart": true
         },
         {
             "id": 2,
             "path": "assets/products/product-2.jpg",
+            "path1": "assets/products/product-4.jpg",
+            "path2": "assets/products/product-3.jpg",
             "title": "Off-Shoulder Top with Balloon Sleeves",
             "description": "This chic off-shoulder top features voluminous balloon sleeves and a flattering neckline, perfect for adding a touch of elegance to any outfit.",
             "category": "Tops",
@@ -59,11 +65,14 @@
             "occasion": ["Casual", "Party"],
             "material": "Polyester",
             "reviewCount": 134,
-            "isAddedToWishlist": false
+            "isAddedToWishlist": false,
+            "isAddedToCart": true
         },
         {
             "id": 3,
             "path": "assets/products/product-3.jpg",
+            "path1": "assets/products/product-2.jpg",
+            "path2": "assets/products/product-5.jpg",
             "title": "Men's Casual Comfort Shoes",
             "description": "Step into style and comfort with these men's casual shoes. Designed for everyday wear, they feature a sleek look and cushioned support, perfect for any casual occasion.",
             "category": "Shoes",
@@ -90,11 +99,14 @@
             "occasion": ["Casual", "Sportswear"],
             "material": "Other",
             "reviewCount": 345,
-            "isAddedToWishlist": false
+            "isAddedToWishlist": false,
+            "isAddedToCart": false
         },
         {
             "id": 4,
             "path": "assets/products/product-4.jpg",
+            "path1": "assets/products/product-2.jpg",
+            "path2": "assets/products/product-3.jpg",
             "title": "Women's Solid Round Neck T-Shirt",
             "description": "This versatile women's solid round neck t-shirt offers a classic fit and soft, breathable fabric, making it a perfect staple for any casual wardrobe.",
             "category": "Tshirts",
@@ -123,11 +135,14 @@
             "occasion": ["Casual"],
             "material": "Cotton",
             "reviewCount": 26,
-            "isAddedToWishlist": true
+            "isAddedToWishlist": true,
+            "isAddedToCart": false
         },
         {
             "id": 5,
             "path": "assets/products/product-5.jpg",
+            "path1": "assets/products/product-2.jpg",
+            "path2": "assets/products/product-3.jpg",
             "title": "Silk Kurta Sets for Men",
             "description": "Crafted from premium silk fabric, these kurta sets combine traditional charm with luxurious comfort, perfect for special occasions and celebrations.",
             "category": "Kurta-Sets",
@@ -156,11 +171,14 @@
             "occasion": ["Wedding", "Party"],
             "material": "Silk",
             "reviewCount": 165,
-            "isAddedToWishlist": false
+            "isAddedToWishlist": false,
+            "isAddedToCart": false
         },
         {
             "id": 6,
             "path": "assets/products/product-6.jpg",
+            "path1": "assets/products/product-2.jpg",
+            "path2": "assets/products/product-3.jpg",
             "title": "Sophisticated Women's Formal Skirt",
             "description": "Elevate your professional wardrobe with this sophisticated formal skirt for women. Tailored for a sleek fit and crafted from high-quality fabric, it's perfect for adding a polished touch to your office attire or formal occasions.",
             "category": "Skirts",
@@ -187,11 +205,14 @@
             "occasion": ["Formal", "Party"],
             "material": "Cotton",
             "reviewCount": 341,
-            "isAddedToWishlist": true
+            "isAddedToWishlist": true,
+            "isAddedToCart": false
         },
         {
             "id": 7,
             "path": "assets/products/product-7.jpg",
+            "path1": "assets/products/product-2.jpg",
+            "path2": "assets/products/product-3.jpg",
             "title": "Stylish Men's Fancy Trousers",
             "description": "Discover sophistication and style with these fancy trousers for men. Featuring a modern cut and premium fabric, they're ideal for elevating your evening or special occasion ensemble with effortless elegance.",
             "category": "Trousers",
@@ -219,11 +240,14 @@
             "occasion": ["Party", "Casual"],
             "material": "Chiffon",
             "reviewCount": 147,
-            "isAddedToWishlist": true
+            "isAddedToWishlist": true,
+            "isAddedToCart": false
         },
         {
             "id": 8,
             "path": "assets/products/product-8.jpg",
+            "path1": "assets/products/product-2.jpg",
+            "path2": "assets/products/product-3.jpg",
             "title": "Classic Men's Formal Shirts",
             "description": "Elevate your professional attire with our classic formal shirts for men. Crafted from high-quality fabric and tailored for a perfect fit, these shirts exude sophistication and are ideal for business meetings, formal events, or daily office wear.",
             "category": "Shirts",
@@ -251,11 +275,14 @@
             "occasion": ["Formal", "Wedding", "Party"],
             "material": "Polyester",
             "reviewCount": 89,
-            "isAddedToWishlist": true
+            "isAddedToWishlist": true,
+            "isAddedToCart": false
         },
         {
             "id": 9,
             "path": "assets/products/product-9.jpg",
+            "path1": "assets/products/product-2.jpg",
+            "path2": "assets/products/product-3.jpg",
             "title": "Versatile Women's Trousers",
             "description": "Discover comfort and style with our versatile women's trousers. Tailored to perfection and available in a range of colors and fits, these trousers are perfect for workdays, casual outings, or dressed-up evenings.",
             "category": "Trousers",
@@ -283,11 +310,14 @@
             "occasion": ["Party", "Formal"],
             "material": "Chiffon",
             "reviewCount": 90,
-            "isAddedToWishlist": false
+            "isAddedToWishlist": false,
+            "isAddedToCart": false
         },
         {
             "id": 10,
             "path": "assets/products/product-10.jpg",
+            "path1": "assets/products/product-2.jpg",
+            "path2": "assets/products/product-3.jpg",
             "title": "Elegant Rhinestone Earrings",
             "description": "Add a touch of elegance with these stunning blue rhinestone earrings. Featuring sparkling rhinestones set in a beautiful blue hue, they're perfect for adding glamour to any outfit, from casual to formal occasions.",
             "category": "Accessories",
@@ -310,11 +340,14 @@
             "occasion": ["Party", "Formal", "Wedding"],
             "material": "Polyester",
             "reviewCount": 43,
-            "isAddedToWishlist": false
+            "isAddedToWishlist": false,
+            "isAddedToCart": false
         },
         {
             "id": 11,
             "path": "assets/products/product-11.jpg",
+            "path1": "assets/products/product-2.jpg",
+            "path2": "assets/products/product-3.jpg",
             "title": "Bling Narrow Toe Heels",
             "description": "Step into luxury with these glamorous narrow-toe heels. Embellished with sparkling bling, they add a touch of elegance and sophistication to any outfit, making them perfect for special occasions and evening events.",
             "category": "Heels",
@@ -340,11 +373,14 @@
             "occasion": ["Party", "Wedding"],
             "material": "Other",
             "reviewCount": 141,
-            "isAddedToWishlist": true
+            "isAddedToWishlist": true,
+            "isAddedToCart": false
         },
         {
             "id": 12,
             "path": "assets/products/product-12.jpg",
+            "path1": "assets/products/product-2.jpg",
+            "path2": "assets/products/product-3.jpg",
             "title": "Chic Short Pleated Skirts for Women",
             "description": "Embrace playful elegance with our short pleated skirts for women. Designed to flatter and flow, these skirts offer a versatile style that's perfect for both casual outings and dressed-up occasions. Ideal for pairing with your favorite tops and shoes for a stylish look.",
             "category": "Skirts",
@@ -372,11 +408,14 @@
             "occasion": ["Party", "Casual"],
             "material": "Other",
             "reviewCount": 217,
-            "isAddedToWishlist": false
+            "isAddedToWishlist": false,
+            "isAddedToCart": false
         },
         {
             "id": 13,
             "path": "assets/products/product-13.jpg",
+            "path1": "assets/products/product-2.jpg",
+            "path2": "assets/products/product-3.jpg",
             "title": "Boys' Printed Shirt",
             "description": "Explore playful style with our boys' printed shirt collection. Featuring vibrant prints and comfortable fabrics, these shirts are perfect for adding a fun and stylish touch to any young boy's wardrobe. Ideal for casual outings and everyday wear.",
             "category": "Shirts",
@@ -402,11 +441,14 @@
             "occasion": ["Casual", "Party"],
             "material": "Cotton",
             "reviewCount": 124,
-            "isAddedToWishlist": false
+            "isAddedToWishlist": false,
+            "isAddedToCart": false
         },
         {
             "id": 14,
             "path": "assets/products/product-14.jpg",
+            "path1": "assets/products/product-2.jpg",
+            "path2": "assets/products/product-3.jpg",
             "title": "Women's Blazers With Welt Pockets",
             "description": "Elevate your wardrobe with our collection of women's blazers. From classic cuts to contemporary styles, each blazer is tailored to perfection, offering sophistication and versatility for professional settings or polished casual looks.",
             "category": "Blazers",
@@ -434,11 +476,14 @@
             "occasion": ["Formal", "Party"],
             "material": "Wool",
             "reviewCount": 47,
-            "isAddedToWishlist": false
+            "isAddedToWishlist": false,
+            "isAddedToCart": false
         },
         {
             "id": 15,
             "path": "assets/products/product-15.jpg",
+            "path1": "assets/products/product-2.jpg",
+            "path2": "assets/products/product-3.jpg",
             "title": "Women's Mid-Length Polka Dot Dress",
             "description": "Step into timeless charm with our women's mid-length polka dot dress. Featuring a flattering silhouette and playful polka dot pattern, this dress is perfect for adding a touch of retro-inspired style to your wardrobe. Ideal for various occasions, from casual outings to semi-formal events.",
             "category": "Dresses",
@@ -466,11 +511,14 @@
             "occasion": ["Party", "Casual"],
             "material": "Mixed",
             "reviewCount": 296,
-            "isAddedToWishlist": false
+            "isAddedToWishlist": false,
+            "isAddedToCart": false
         },
         {
             "id": 16,
             "path": "assets/products/product-16.jpg",
+            "path1": "assets/products/product-2.jpg",
+            "path2": "assets/products/product-3.jpg",
             "title": "Men's Slim Fit Suit",
             "description": "Discover timeless elegance with our men's suit collection. Tailored for impeccable fit and crafted from premium materials, our suits offer sophistication and versatility for formal events, business settings, or any occasion where you want to make a stylish impression.",
             "category": "Blazers",
@@ -496,11 +544,14 @@
             "occasion": ["Party", "Wedding", "Formal"],
             "material": "polyester",
             "reviewCount": 171,
-            "isAddedToWishlist": false
+            "isAddedToWishlist": false,
+            "isAddedToCart": false
         },
         {
             "id": 17,
             "path": "assets/products/product-17.jpg",
+            "path1": "assets/products/product-2.jpg",
+            "path2": "assets/products/product-3.jpg",
             "title": "Boy's Straight Fit Jeans",
             "description": "Elevate his casual wardrobe with our boy's straight fit jeans. Designed for comfort and style, these jeans feature a classic straight leg cut that pairs perfectly with any top. Ideal for everyday wear, school, and weekend adventures.",
             "category": "Jeans",
@@ -526,11 +577,14 @@
             "occasion": ["Casual", "Party"],
             "material": "Mixed",
             "reviewCount": 183,
-            "isAddedToWishlist": false
+            "isAddedToWishlist": false,
+            "isAddedToCart": false
         },
         {
             "id": 18,
             "path": "assets/products/product-18.jpg",
+            "path1": "assets/products/product-2.jpg",
+            "path2": "assets/products/product-3.jpg",
             "title": "Girls' Checkered Dress",
             "description": "Add a touch of charm to her wardrobe with our girls' checkered dress. Featuring a delightful checkered pattern and crafted for comfort, this dress is perfect for playdates, parties, or any occasion where she wants to look stylish and feel fabulous.",
             "category": "Dresses",
@@ -558,11 +612,14 @@
             "occasion": ["Casual", "Party"],
             "material": "Chiffon",
             "reviewCount": 211,
-            "isAddedToWishlist": false
+            "isAddedToWishlist": false,
+            "isAddedToCart": false
         },
         {
             "id": 19,
             "path": "assets/products/product-19.jpg",
+            "path1": "assets/products/product-2.jpg",
+            "path2": "assets/products/product-3.jpg",
             "title": "Women's Relaxed Fit Jeans",
             "description": "Enjoy comfort and style with our women's relaxed fit jeans. Designed for a laid-back feel, these jeans offer a relaxed silhouette and are crafted from soft, stretchy denim for all-day comfort. Perfect for casual outings and everyday wear, they pair effortlessly with your favorite tops and sneakers or sandals.",
             "category": "Jeans",
@@ -588,11 +645,14 @@
             "occasion": "Casual",
             "material": "Mixed",
             "reviewCount": 301,
-            "isAddedToWishlist": false
+            "isAddedToWishlist": false,
+            "isAddedToCart": false
         },
         {
             "id": 20,
             "path": "assets/products/product-20.jpg",
+            "path1": "assets/products/product-2.jpg",
+            "path2": "assets/products/product-3.jpg",
             "title": "Women's Printed Dress",
             "description": "Discover chic versatility with our women's printed dress collection. Featuring vibrant prints and flattering silhouettes, these dresses are perfect for adding a pop of color and style to your wardrobe. Ideal for various occasions, from casual outings to special events, they effortlessly elevate your look with a touch of personality.",
             "category": "Dresses",
@@ -619,11 +679,14 @@
             "occasion": ["Casual", "Wedding"],
             "material": "Chiffon",
             "reviewCount": 342,
-            "isAddedToWishlist": true
+            "isAddedToWishlist": true,
+            "isAddedToCart": false
         },
         {
             "id": 21,
             "path": "assets/products/product-21.jpg",
+            "path1": "assets/products/product-2.jpg",
+            "path2": "assets/products/product-3.jpg",
             "title": "Super Glossy Lipstick",
             "description": "Discover the allure of glossy lipstick that adds a luscious shine to your lips. Whether you're looking to make a statement or enhance your everyday look, our glossy lipstick promises to deliver a brilliant finish that complements every smile.",
             "category": "Makeup",
@@ -644,7 +707,8 @@
             "occasion": ["Party", "Wedding"],
             "material": "Other",
             "reviewCount": 155,
-            "isAddedToWishlist": false
+            "isAddedToWishlist": false,
+            "isAddedToCart": false
         }
     ]   
 }

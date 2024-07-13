@@ -1,0 +1,45 @@
+.size-chart-dialog {
+  margin: 0.8rem 1.2rem;
+  .heading {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      background: transparent;
+      border: none;
+      color: #575555;
+    }
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      width: 50%;
+      height: 3rem;
+      font-weight: 600;
+      border: none;
+      background-color: white;
+      letter-spacing: 1px;
+      &.active {
+        color: #DB4A2B; 
+        border-bottom: 3px solid #DB4A2B;
+      }
+    }
+  }
+
+  .sizeChart {
+    margin-top: 1.5rem;
+    .women-measure, .men-measure {
+      text-align: center;
+    }
+  }
+
+  .howToMeasure {
+    margin-top: 1.5rem;
+    .women-measure, .men-measure {
+      text-align: center;
+    }
+  }
+}

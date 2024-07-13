@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { OfferCard } from '../models/product.model';
+import { ProductService } from '../services/product-list-data.service';
 
 
 @Component({

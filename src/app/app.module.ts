@@ -22,6 +22,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SizeChartComponent } from './dialogs/size-chart/size-chart.component';
+import { CartComponent } from './cart/cart.component';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { SizeChartComponent } from './dialogs/size-chart/size-chart.component';
     ProductListComponent,
     WishlistComponent,
     ProductDetailsComponent,
-    SizeChartComponent
+    SizeChartComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { SizeChartComponent } from './dialogs/size-chart/size-chart.component';
     HttpClientModule,
     MatRadioModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatBadgeModule
   ],
   providers: [
     provideClientHydration(),

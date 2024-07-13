@@ -12,7 +12,7 @@
                     <span class="price">Rs. {{ product.price }}</span>
                     <span class="discount">({{ product.discount }}% OFF)</span>
                 </div>
-                <button class="btn btn-danger">Add To Cart</button>
+                <button class="btn btn-danger" (click)="addToCart($event, product)">{{product.addToCartLabel}}<mat-icon>local_mall</mat-icon></button>
             </div>
             <div class="card-body content ratings">
                 <div class="rate">

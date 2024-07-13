@@ -52,7 +52,6 @@ export class FiltersComponent {
 
   toggleFilterOptionSelection(option: string, filterType: string, event:any): void {
     const selectedOption = { filterType: filterType, value: option, isChecked: event.checked };
-
     if (this.isFilterSelected(selectedOption)) {
       this.selectedOptions = this.selectedOptions.filter(item => 
         item.filterType !== selectedOption.filterType || item.value !== selectedOption.value
@@ -60,9 +59,7 @@ export class FiltersComponent {
     } else {
       this.selectedOptions.push(selectedOption);
     }
-
     this.filterProducts(selectedOption);
-
     this.applyLabel = this.selectedOptions.length > 0 ? 'CLEAR FILTERS' : 'APPLY FILTERS';
   }
 

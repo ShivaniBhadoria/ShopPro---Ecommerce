@@ -23,6 +23,8 @@ export class ProductDetailsComponent {
   fullStars: number[] = [];
   halfStar: boolean = false;
   emptyStars: number[] = [];
+  addToCartLabel: string = "ADD TO CART";
+  wishlistLabel: string = "WISHLIST";
 
   constructor(private route: ActivatedRoute, private productService: ProductService, public dialog: MatDialog) {}
 
@@ -33,6 +35,8 @@ export class ProductDetailsComponent {
         this.productService.getProducts().subscribe(data => {
           this.productData = data.productDetails;
           this.getProductDetails(id);
+        }, error => {
+          console.error('Error fetching product details:', error);
         });
       }
     });
@@ -105,8 +109,23 @@ export class ProductDetailsComponent {
   openSizeChart(): void {
     this.dialog.open(SizeChartComponent, {
       width: '500px',
-      panelClass: 'size-chart-modal'
+      height: '500px',
+      autoFocus: false,
+      panelClass: 'size-chart-modal',
+      data: {
+        gender: this.product.gender,
+        brand: this.product.brand
+      }
     });
   }
+
+  addToCart(event:any) {
+    this.addToCartLabel = 'GO TO CART';
+  }
+
+  addToWishlist(event:any) {
+    this.wishlistLabel = 'WISHLISTED';
+  }
+  // this.winRef.nativeWindow.parent.postMessage('showOverlay', '*');
     
 }

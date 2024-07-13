@@ -48,7 +48,8 @@
 
                 .filter-checkbox {
                     ::ng-deep .mdc-form-field>label  {
-                        padding-left: 9px;
+                        font-size: 15px;
+                        padding-left: 0;
                     }
                 }
             }

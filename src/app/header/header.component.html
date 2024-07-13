@@ -3,7 +3,7 @@
     <div class="container-fluid navbar-container">
       <a [routerLink]="['']"><img src="../assets/shopPro-logo.png" alt="ShopPro - life in Style" width="145" height="40" class="logo"/></a>
       <ul class="bag-profile">
-        <li class="nav-item dropdown" [class.show]="isDropdownOpen" (click)="toggleDropdown()" (mouseenter)="openDropdown()" (mouseleave)="closeDropdown()">
+        <li class="nav-item dropdown" [class.show]="isDropdownOpen" (click)="toggleDropdown()" (mouseenter)="openDropdown(true)" (mouseleave)="openDropdown(false)">
           <a class="nav-link dropdown-toggle" [routerLink]="['']" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <mat-icon>person</mat-icon>
           </a>
@@ -17,7 +17,9 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['']"><mat-icon>shopping_bag</mat-icon></a>
+          <a class="nav-link" [routerLink]="['cart']">
+            <mat-icon matBadge="{{cartItemCount}}" matBadgeSize="medium" matBadgePosition="after" matBadgeColor="warn" matBadgeOverlap="true" aria-hidden="false">shopping_bag</mat-icon>
+          </a>
         </li>
       </ul>
       <button class="navbar-toggler hamburger" type="button" (click)="toggleNavbar()" data-bs-toggle="collapse" 
@@ -40,24 +42,6 @@
           <li class="nav-item" (click)="toggleNavbar()">
             <a class="nav-link" [routerLink]="['wishlist']">My Wishlist</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" [routerLink]="['']"><mat-icon>shopping_bag</mat-icon></a>
-          </li>
-          <li class="nav-item dropdown" [class.show]="isDropdownOpen" (click)="toggleDropdown()" (mouseenter)="openDropdown()" (mouseleave)="closeDropdown()">
-            <a class="nav-link dropdown-toggle" [routerLink]="['']" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <mat-icon>person</mat-icon>
-            </a>
-            <ul class="dropdown-menu" [class.show]="isDropdownOpen">
-              <li><a class="dropdown-item" [routerLink]="['admin-panel']">Admin Panel</a></li>
-              <li><a class="dropdown-item" [routerLink]="['']">My Orders</a></li>
-              <li><a class="dropdown-item" [routerLink]="['']">Saved Addresses</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" [routerLink]="['']">Login/Register</a></li>
-            </ul>
-          </li> -->
-          <!-- <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li> -->
         </ul>
       </div>
     </div>

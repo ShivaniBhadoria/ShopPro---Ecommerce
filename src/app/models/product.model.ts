@@ -1,6 +1,8 @@
 export interface Product {
     id: number;
     path: string;
+    path1: string;
+    path2: string;
     title: string;
     description: string;
     category: string;
@@ -18,6 +20,7 @@ export interface Product {
     reviewCount: number;
     isAddedToWishlist: boolean;
     discountedPrice: number;
+    isAddedToCart: boolean;
 }
 
 export interface OfferCard {

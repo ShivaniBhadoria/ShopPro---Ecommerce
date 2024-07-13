@@ -18,6 +18,7 @@ export class ShopProductsComponent implements OnInit {
   sortedByText: string = "Default";
   isLoading = false;
   source: string = "";
+  cartItemCount: number = 0;
 
   sortOptions: { id: string, text: string }[] = [
     { id: 'new', text: "What's New" },
@@ -38,6 +39,7 @@ export class ShopProductsComponent implements OnInit {
       this.productData = data.productDetails.map((product: any) => {
         return {
           ...product,
+          addToCartLabel: product.isAddedToCart ? 'Go To Cart' : 'Add To Cart',
           discountedPrice: this.calculateDiscountedPrice(product.price, product.discount)
         };
       });
@@ -85,5 +87,14 @@ export class ShopProductsComponent implements OnInit {
   onProductDataChange(updatedProductData: any[]) {
     this.updatedProductData = JSON.parse(JSON.stringify(updatedProductData));
     this.sortItems(null, this.productService?.getSortId().sortId, this.productService?.getSortId().sortText);
+  }
+
+  updateProductData(product: Product): void {//To get cartItemCount on click of Add to cart
+    const index = this.productData.findIndex(p => p.id === product.id);
+    if (index !== -1) {
+      this.productData[index] = { ...product };
+    }
+    this.cartItemCount = this.productData.filter(product => product.isAddedToCart).length;
+    this.productService.sendCartItemCount(this.cartItemCount);
   }
 }

@@ -5,7 +5,6 @@
     min-height: 100vh;
 
     .container {
-        border: 1px solid grey;
         margin: 2rem auto;
 
         .col-12 {
@@ -41,7 +40,7 @@
                         display: inline-flex;
                         justify-content: space-between;
                         align-items: center;
-                        width: 15rem;
+                        width: 15.5rem;
                         span {
                             &.discounted-price {
                                 font-weight: bold;
@@ -53,6 +52,7 @@
                             }
                             &.discount {
                                 font-size: 16px;
+                                font-weight: 600;
                                 color: #DB4A2B;
                             }
                         }
@@ -90,7 +90,7 @@
                                 width: 160px;
                                 text-overflow: ellipsis;
                                 overflow: hidden;
-                                font-size: 14px;
+                                font-size: 15px;
                                 background-color: transparent;
                                 color: black;
                                 border-color: rgb(167, 163, 163);
@@ -99,6 +99,8 @@
                                 cursor: pointer;
                                 .dropdown-item {
                                     font-size:15px;
+                                    font-weight: 600;
+                                    text-align: center;
                 
                                     &:hover, &:focus {
                                         background-color:#DB4A2B;
@@ -106,10 +108,29 @@
                                     }
                                 }
                             }
+                            .size-chart {
+                                margin-left: 32px;
+                                a {
+                                    font-size:15px;
+                                    cursor: pointer;
+                                    vertical-align: sub;
+                                    color: #DB4A2B;
+                                    font-weight: 600;
+
+                                    &:hover {
+                                        color: #c52c0a;
+                                    }
+
+                                    mat-icon {
+                                        vertical-align: top;
+                                        padding-left: 2px;
+                                    }
+                                }
+                            }
                         } 
                     }
                     .quantity-container {
-                        margin: 2rem 0;
+                        margin: 2rem 0 3rem 0;
 
                         span {
                             margin-right: 18px;
@@ -140,6 +161,64 @@
                             margin: 0;
                         }
                     }
+
+                    .add-buttons {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .btn {
+                            width: 200px;
+                            padding: 0.7rem;
+                            margin-right: 15px;
+                            letter-spacing: 2px;
+                            font-size: 15px;
+                            font-weight: 500;
+
+                            mat-icon {
+                                vertical-align: middle;
+                                font-size: 20px;
+                                padding-left: 3px;
+                            }
+                        }
+                    }
+                    .product-description {
+                        margin-top: 2rem;
+                        h6 {
+                            font-weight: 700;
+                            letter-spacing: 2px;
+                            margin-bottom: 1rem;
+                            display: inline-block;
+                        }
+                        p {
+                            font-size: 16px;
+                            color: black;
+                        }
+                        .rate {
+                            background-color: rgba(255, 255, 255, 0.5);
+                            padding: 0.5rem;
+                            display: inline-block;
+                            min-width: 12rem;
+                            height: 2rem;
+                            margin-bottom: 15px;
+                        
+                            .rate-icon {
+                                padding: 0.3rem;
+                                box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+                                font-weight: 600;
+                                font-size: 15px;
+                                mat-icon {
+                                    font-size: 18px;
+                                    vertical-align: middle;
+                                    padding-left: 3px;
+                                    color: gold;
+                                }
+                                span {
+                                    font-size: 14px;
+                                    color: rgb(79, 79, 79);
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -149,6 +228,8 @@
 .color-radio-group ::ng-deep .mat-mdc-radio-touch-target { 
     background: var(--color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    opacity: 0.8;
 }
 
 .color-radio-group ::ng-deep .mdc-radio__outer-circle {
@@ -156,10 +237,11 @@
   }
 
 .color-radio-group ::ng-deep .mdc-radio__inner-circle {
-    border-radius: 0;
+    border-radius: 50%;
     top: -39px;
     left: -39px;
     border-width: 3px;
+    border-color: rgb(66, 63, 63) !important;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     height: 98px;
     width: 98px;
@@ -168,4 +250,15 @@
 .btn{
     border-radius: 0;
     box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+}
+
+.btn {
+    @media (max-width: 500px) {
+        font-size: 13px !important;
+        padding: 0.5rem !important;
+
+        .mat-icon {
+            display: none;
+        }
+    }
 }
