@@ -1,6 +1,6 @@
 <div class="shop-products-container">
     <div class="shop-products-actions">
-        <app-filters [filterData]="filterData" [productData]="productData" (productDataChange)="onProductDataChange($event)" [source]="source"></app-filters>
+        <app-filters [filterData]="filterData" [productData]="productData" (productDataChange)="onProductDataChange($event)" (filtersAppliedChange)="onFiltersAppliedChange($event)" [source]="source"></app-filters>
         <div class="sorting">
             <div class="dropdown" (mouseenter)="toggleSortingDropdown(true)" (mouseleave)="toggleSortingDropdown(false)" [class.show]="isSortDropdownOpen">
                 <button class="btn btn-secondary dropdown-toggle sort-btn" type="button" mid="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -14,8 +14,13 @@
             </div>
         </div>
     </div>
-    <div class="d-flex justify-content-center align-items-center" [class.spinner-visible]="isLoading">
-        <div *ngIf="isLoading" class="spinner-border text-danger" role="status">
+    <div class="applied-filters" *ngIf="filterApplied.length > 0">
+        <span *ngFor="let filter of filterApplied">
+            {{ filter }}
+        </span>
+    </div>
+    <div *ngIf="isLoading" class="d-flex justify-content-center align-items-center" [class.spinner-visible]="isLoading">
+        <div  class="spinner-border text-danger" role="status">
         </div>
     </div>
     <div class="product-list">

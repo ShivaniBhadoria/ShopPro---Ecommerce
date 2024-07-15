@@ -18,6 +18,7 @@ export class ShopProductsComponent implements OnInit {
   sortedByText: string = "Default";
   isLoading = false;
   source: string = "";
+  filterApplied: any [] = [];
   cartItemCount: number = 0;
 
   sortOptions: { id: string, text: string }[] = [
@@ -87,6 +88,10 @@ export class ShopProductsComponent implements OnInit {
   onProductDataChange(updatedProductData: any[]) {
     this.updatedProductData = JSON.parse(JSON.stringify(updatedProductData));
     this.sortItems(null, this.productService?.getSortId().sortId, this.productService?.getSortId().sortText);
+  }
+
+  onFiltersAppliedChange(checkedValues: any[]) {
+    this.filterApplied = checkedValues;
   }
 
   updateProductData(product: Product): void {//To get cartItemCount on click of Add to cart

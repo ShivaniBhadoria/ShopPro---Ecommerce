@@ -9,6 +9,7 @@ export class FiltersComponent {
   @Input()filterData: any[] = [];
   @Input()productData: any[] = [];
   @Output() productDataChange: EventEmitter<any[]> = new EventEmitter<any[]>();
+  @Output() filtersAppliedChange: EventEmitter<any[]> = new EventEmitter<any[]>();
   @Input() source: string = "";
   selectedOptions: any[] = []; 
   applyLabel = 'APPLY FILTERS';
@@ -96,10 +97,15 @@ export class FiltersComponent {
       }
     }
 
-    if(this.selectedOptions.length === 0){
+    if(this.selectedOptions.length === 0) {
       this.productDataChange.emit(this.productData);
     } else {
+      const checkedValues = this.selectedOptions
+      .filter(opt => opt.isChecked)
+      .map(opt => opt.value);
+
       this.productDataChange.emit(Array.from(this.filteredProductsSet));
+      this.filtersAppliedChange.emit(checkedValues);
     }
   }
   
