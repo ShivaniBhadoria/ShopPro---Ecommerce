@@ -21,6 +21,11 @@ export interface Product {
     isAddedToWishlist: boolean;
     discountedPrice: number;
     isAddedToCart: boolean;
+    iconColor: string;
+    quantity: number;
+    originalPrice: number;
+    selectedSize: string;
+    isSizeDropdownOpen: boolean
 }
 
 export interface OfferCard {

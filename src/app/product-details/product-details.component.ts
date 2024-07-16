@@ -4,6 +4,8 @@ import { ProductService } from '../services/product-list-data.service';
 import { Product } from '../models/product.model';
 import { MatDialog } from '@angular/material/dialog';
 import { SizeChartComponent } from '../dialogs/size-chart/size-chart.component';
+import { Router } from '@angular/router';
+import { CartService } from '../services/cart-details-data.service';
 
 @Component({
   selector: 'app-product-details',
@@ -25,8 +27,11 @@ export class ProductDetailsComponent {
   emptyStars: number[] = [];
   addToCartLabel: string = "ADD TO CART";
   wishlistLabel: string = "WISHLIST";
+  showAlert = false;
 
-  constructor(private route: ActivatedRoute, private productService: ProductService, public dialog: MatDialog) {}
+  constructor(private route: ActivatedRoute, private productService: ProductService, 
+    private router: Router, public dialog: MatDialog,
+  private cartService: CartService) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -45,6 +50,7 @@ export class ProductDetailsComponent {
   getProductDetails(id:any){
     this.product = this.productData.find(product => product.id === +id);
     this.product.discountedPrice = this.calculateDiscountedPrice(this.product.price, this.product.discount);
+    this.product.addToCartLabel = 'Add To Cart';
     this.selectedColor = this.product.colorsAvailable[0];
     this.selectedSize = this.product.sizeAvailable[0];
     this.rating = this.product.ratings;
@@ -53,7 +59,7 @@ export class ProductDetailsComponent {
 
   calculateDiscountedPrice(price: number, discount: number): number {
     const discountedPrice = price - (price * discount / 100);
-    return discountedPrice;
+    return Math.floor(discountedPrice);
   }
 
   onColorChange(event: any): void {
@@ -103,13 +109,12 @@ export class ProductDetailsComponent {
   selectSize(size: string): void {
     this.selectedSize = size;
     this.isSizeDropdownOpen = false;
-    console.log('Selected size:', this.selectedSize);
   }
 
   openSizeChart(): void {
     this.dialog.open(SizeChartComponent, {
       width: '500px',
-      height: '500px',
+      height: '560px',
       autoFocus: false,
       panelClass: 'size-chart-modal',
       data: {
@@ -119,13 +124,28 @@ export class ProductDetailsComponent {
     });
   }
 
-  addToCart(event:any) {
+  addToCart(event:any, product:any) {
     this.addToCartLabel = 'GO TO CART';
+    if(!product.isAddedToCart){
+      product.isAddedToCart = true;
+      product.addToCartLabel = 'Go To Cart';
+      this.showAlert = true;
+      setTimeout(() => {
+        this.showAlert = false;
+      }, 1000);
+      this.productService.sendCartItemCount(1);
+      this.cartService.sendCartProducts([product]);
+    } else {
+      this.router.navigate(['/cart']);
+    }
   }
 
   addToWishlist(event:any) {
     this.wishlistLabel = 'WISHLISTED';
   }
-  // this.winRef.nativeWindow.parent.postMessage('showOverlay', '*');
+
+  closeAlert() {
+    this.showAlert = false;
+  }
     
 }

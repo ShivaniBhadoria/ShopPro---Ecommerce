@@ -1,15 +1,3 @@
-<div class="products">
-    <div class="row product-row" >
-        <div *ngFor="let product of wishlistProducts" class="card product-card">
-            <a [routerLink]="['']">
-                <img [src]="product.path" class="card-img-top" width="264" height="400" [alt]="product.title">
-            </a>
-            <div class="card-body content">
-                <h6 class="card-title">{{ product.title }}</h6>
-                <p>{{ product.price }}</p>
-                <p>{{ product.discount }}</p>
-                <a href="#" class="btn btn-danger">Add To Cart</a>
-            </div>
-        </div>
-    </div>
+<div class="wishlisted-products">
+    <app-product-list [productData]="wishlistProducts"></app-product-list>
 </div>

@@ -12,8 +12,8 @@
             "price": 5004,
             "brand": "PureWave",
             "colorsAvailable": [
-                "Green",
                 "Red",
+                "Green",
                 "Yellow",
                 "Blue"
             ],
@@ -32,7 +32,7 @@
             "material": "Chiffon",
             "reviewCount": 234,
             "isAddedToWishlist": true,
-            "isAddedToCart": true
+            "isAddedToCart": false
         },
         {
             "id": 2,
@@ -66,7 +66,7 @@
             "material": "Polyester",
             "reviewCount": 134,
             "isAddedToWishlist": false,
-            "isAddedToCart": true
+            "isAddedToCart": false
         },
         {
             "id": 3,
@@ -80,9 +80,9 @@
             "price": 1735,
             "brand": "PureWave",
             "colorsAvailable": [
-                "White",
+                "Red",
                 "Black",
-                "Red"
+                "White"
             ],
             "sizeAvailable": [
                 "XS",
@@ -220,9 +220,9 @@
             "price": 33952,
             "brand": "ClearLine",
             "colorsAvailable": [
-                "White",
-                "Red",
                 "Orange",
+                "Red",
+                "White",
                 "Green"
             ],
             "sizeAvailable": [
@@ -238,7 +238,7 @@
             "discount": 20,
             "isNewArrival": false,
             "occasion": ["Party", "Casual"],
-            "material": "Chiffon",
+            "material": "Polyester",
             "reviewCount": 147,
             "isAddedToWishlist": true,
             "isAddedToCart": false
@@ -338,7 +338,7 @@
             "discount": 45,
             "isNewArrival": true,
             "occasion": ["Party", "Formal", "Wedding"],
-            "material": "Polyester",
+            "material": "Other",
             "reviewCount": 43,
             "isAddedToWishlist": false,
             "isAddedToCart": false
@@ -406,7 +406,7 @@
             "discount": 10,
             "isNewArrival": false,
             "occasion": ["Party", "Casual"],
-            "material": "Other",
+            "material": "Mixed",
             "reviewCount": 217,
             "isAddedToWishlist": false,
             "isAddedToCart": false
@@ -542,7 +542,7 @@
             "discount": 10,
             "isNewArrival": true,
             "occasion": ["Party", "Wedding", "Formal"],
-            "material": "polyester",
+            "material": "Polyester",
             "reviewCount": 171,
             "isAddedToWishlist": false,
             "isAddedToCart": false
@@ -592,8 +592,8 @@
             "price": 27341,
             "brand": "ClearLine",
             "colorsAvailable": [
-                "White",
                 "Yellow",
+                "White",
                 "Pink",
                 "Black"
             ],

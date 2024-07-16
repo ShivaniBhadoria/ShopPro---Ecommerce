@@ -15,6 +15,7 @@
         </div>
     </div>
     <div class="applied-filters" *ngIf="filterApplied.length > 0">
+        <span class="filter-label">Filters</span>
         <span *ngFor="let filter of filterApplied">
             {{ filter }}
         </span>

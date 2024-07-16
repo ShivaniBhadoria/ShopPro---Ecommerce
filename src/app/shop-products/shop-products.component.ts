@@ -3,6 +3,7 @@ import { FILTER_DATA } from './filter-data';
 import { Product } from '../models/product.model';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../services/product-list-data.service';
+import { CartService } from '../services/cart-details-data.service';
 
 @Component({
   selector: 'app-shop-products',
@@ -31,7 +32,9 @@ export class ShopProductsComponent implements OnInit {
     { id: 'default', text: 'Default' }
   ];
 
-  constructor(private productService: ProductService, private route: ActivatedRoute) {}
+  constructor(private productService: ProductService, private route: ActivatedRoute,
+    private cartService: CartService
+  ) {}
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -50,6 +53,10 @@ export class ShopProductsComponent implements OnInit {
         this.source = params['source'];
       });
       this.isLoading = false;
+    },
+    error => {
+      this.isLoading = false;
+      console.error('Error fetching product details:', error);
     });
   }
 
@@ -59,7 +66,7 @@ export class ShopProductsComponent implements OnInit {
 
   calculateDiscountedPrice(price: number, discount: number): number {
     const discountedPrice = price - (price * discount / 100);
-    return discountedPrice;
+    return Math.floor(discountedPrice);
   }
 
   sortItems(event: Event | null = null, id: string = 'default', text:string = 'Default'): void {
@@ -94,12 +101,14 @@ export class ShopProductsComponent implements OnInit {
     this.filterApplied = checkedValues;
   }
 
-  updateProductData(product: Product): void {//To get cartItemCount on click of Add to cart
+  updateProductData(product: Product): void {
     const index = this.productData.findIndex(p => p.id === product.id);
     if (index !== -1) {
       this.productData[index] = { ...product };
     }
     this.cartItemCount = this.productData.filter(product => product.isAddedToCart).length;
     this.productService.sendCartItemCount(this.cartItemCount);
+    const cartProducts = this.productData.filter(p => p.isAddedToCart) || [];
+    this.cartService.sendCartProducts(cartProducts);
   }
 }

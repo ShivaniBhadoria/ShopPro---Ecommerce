@@ -8,14 +8,14 @@ import { Product } from '../../models/product.model';
   styleUrl: './product-list.component.scss'
 })
 export class ProductListComponent {
-  @Input()productData: any[] = [];
+  @Input() productData: any[] = [];
   @Output() addToCartClicked = new EventEmitter<Product>();
-  addToCartLabel: string = "Add To Cart";
+  showAlert = false;
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-  
+ 
   }
 
   toggleWishlist(product: any, isAdded: boolean) {
@@ -27,9 +27,17 @@ export class ProductListComponent {
       product.isAddedToCart = true;
       product.addToCartLabel = 'Go To Cart';
       this.addToCartClicked.emit(product);
+      this.showAlert = true;
+      setTimeout(() => {
+        this.showAlert = false;
+      }, 1000);
     } else {
       this.router.navigate(['/cart']);
     }
+  }
+
+  closeAlert() {
+    this.showAlert = false;
   }
 
 }

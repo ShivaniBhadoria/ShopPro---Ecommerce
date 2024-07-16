@@ -1,4 +1,8 @@
 <div class="products">
+    <div *ngIf="showAlert" class="alert alert-danger custom-alert alert-dismissible fade show" role="alert">
+        ADDED TO CART!
+        <button type="button" class="btn-close" aria-label="Close" (click)="closeAlert()"></button>
+    </div>
     <div class="row product-row">
         <div *ngFor="let product of productData"  class="card product-card">
             <a [routerLink]="['/product-details', product.id]">

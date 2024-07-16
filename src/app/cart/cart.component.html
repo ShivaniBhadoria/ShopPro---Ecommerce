@@ -1,3 +1,87 @@
 <div class="cart-container">
- {{cartItemCount}}
+    <div class="container" *ngIf="cartItems.length>0">
+        <div class="row">
+            <div class="col-md-8 col-sm-12 cart-product-details">
+                <div class="bag"><b>Bag Details</b> <span> ({{cartItemCount}} items)</span></div>
+                <div class="row" *ngFor="let cartItem of cartItems">
+                    <div class="col-md-4 col-sm-12 product-img">
+                        <img [src]="cartItem.path" class="img-fluid" [alt]="cartItem.title">
+                    </div>
+                    <div class="col-md-8 col-sm-12 product-details">
+                        <p>{{ cartItem.brand }}</p>
+                        <p>{{ cartItem.title }}</p>
+                        <div class="product-attributes">
+                            <div class="size-selected">
+                                <div class="dropdown" (mouseenter)="toggleSizingDropdown(true, cartItem)" (mouseleave)="toggleSizingDropdown(false, cartItem)" [class.show]="cartItem.isSizeDropdownOpen">
+                                    <button class="btn btn-secondary dropdown-toggle size-btn" type="button" mid="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                      Select Size: <b>{{cartItem.selectedSize}}</b>
+                                    </button>
+                                    <ul class="dropdown-menu size-dropdown" aria-labelledby="dropdownMenuButton1" [class.show]="cartItem.isSizeDropdownOpen">
+                                        <li *ngFor="let size of cartItem.sizeAvailable" (click)="selectSize(size, cartItem)">
+                                            <a class="dropdown-item">{{ size }}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="color">
+                                    <span>Color:</span><mat-icon [style.color]="cartItem.iconColor">circle</mat-icon>
+                                </div>
+                            </div>
+                            <div class="quantity-container">
+                                <span>Quantity:</span>
+                                <div class="quantity-content">
+                                    <button class="quantity-button" (click)="decreaseQuantity(cartItem)">-</button>
+                                    <input type="number" [disabled]="true" class="quantity-input" [min]="minQuantity" 
+                                    [max]="maxQuantity" [(ngModel)]="cartItem.quantity" (ngModelChange)="updateQuantity(cartItem, $event)" />
+                                    <button class="quantity-button" (click)="increaseQuantity(cartItem)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="price-details">
+                            <span class="discounted-price">₹{{ cartItem.discountedPrice }}</span>
+                            <span class="price">₹{{ cartItem.price }}</span>
+                            <span class="discount">({{ cartItem.discount }}% OFF)</span>
+                        </div>
+                        <div class="returns">
+                            <mat-icon>cached</mat-icon><span><b>14 days</b> return available</span>
+                        </div>
+                        <div class="user-actions">
+                            <mat-icon class="wishlist">favorite_outlined</mat-icon>
+                            <mat-icon class="delete" (click)="removeCartItem(cartItem)">delete_outlined</mat-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 order-summary">
+                <h6>ORDER SUMMARY</h6>
+
+                <div class="summary-item">
+                  <span>Total MRP</span>
+                  <span>₹{{ totalMRP }}</span>
+                </div>
+              
+                <div class="summary-item">
+                  <span>Discount on MRP</span>
+                  <span>-₹{{ discountAmount }}</span>
+                </div>
+
+                <div class="summary-item">
+                    <span>Shipping Fee</span>
+                    <span class="shipping-fee">{{ shippingFee ? '₹' + shippingFee : 'FREE' }}</span>
+                </div>
+              
+                <div class="summary-item total-amount">
+                  <span>Total Amount</span>
+                  <span>₹{{ totalAmount }}</span>
+                </div>
+                <div class="place-order">
+                    <button class="btn btn-danger" (click)="orderPlaced()">{{orderPlacedLabel}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cartEmpty" *ngIf="cartItems.length === 0">
+        <mat-icon>shopping_cart_outlined</mat-icon>
+        <p>Oops! Your cart is looking a bit empty. Time to go shopping!</p>
+        <button class="btn btn-danger" [routerLink]="['/shop']">Add Items in your Cart</button>
+    </div>
 </div>

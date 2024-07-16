@@ -1,7 +1,28 @@
+@import '../../../assets/css/mixins';
 .products {
     height: 100%;
     width: 100%;
     padding: 2rem;
+
+    .custom-alert {
+        position: fixed;
+        text-align: center;
+        letter-spacing: 3px;
+        font-weight: 600;
+        border-radius: 0;
+        background-color: rgba(220, 53, 69, 0.9);
+        margin-bottom: 0;
+        color: white;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 400px;
+        z-index: 1050;
+        animation: slideDown 0.5s ease-in-out, slideUp 0.5s ease-in-out 2.5s;
+        @include slide-down;
+        @include slide-up;
+    }
 
     .product-row {
         justify-content: space-evenly;
@@ -126,6 +147,7 @@
         p {
             font-size: 18px;
             font-weight: bold;
+            color: rgb(100, 98, 98);
         }
     }
 }

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../services/product-list-data.service';
 import { Product } from '../models/product.model';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +12,6 @@ export class HeaderComponent {
   navbarOpen = false;
   isDropdownOpen = false;
   cartItemCount = 0;
-  cartItems: Product[] = [];
   
   constructor(private productService: ProductService) {}
 
@@ -26,7 +24,6 @@ export class HeaderComponent {
   
   getCartDetails(): void {
     this.productService.getCartDetails().subscribe(data => {
-        this.cartItems = data.cartItems.productsInCart;
         this.cartItemCount = data.cartItems.cartItemCount;
       },
       error => {

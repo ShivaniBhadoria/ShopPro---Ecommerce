@@ -108,3 +108,9 @@ p {
     border-radius: 0;
     box-shadow: 0 4px 4px rgba(0,0,0,0.1);
 }
+
+.slideshow-img {
+    @media (min-width: 1500px) {
+        max-height: 750px !important;
+    }
+}
