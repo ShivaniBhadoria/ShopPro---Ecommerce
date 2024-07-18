@@ -1,0 +1,44 @@
+<div class="dashboard">
+
+  <div class="brand-bar-chart">
+    <div class="brand-title">
+        <h5>Brand Analysis</h5>
+        <p>This chart compares average ratings and average review counts across different brands. Switch between 'Average Ratings' and 'Average Review Count' to explore different perspectives of brand performance.</p>
+    </div>
+    <div class="dropdown select-metric" (mouseenter)="toggleSelectMetric(true)" (mouseleave)="toggleSelectMetric(false)" [class.show]="isSelectOpen">
+        <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            {{selectedOptionLabel}}
+        </button>
+        <ul class="dropdown-menu bar-dropdown" aria-labelledby="dropdownMenuButton1" [class.show]="isSelectOpen">
+            <li><a class="dropdown-item" (click)="setSelectedOption('averageRatings')">Average Ratings</a></li>
+            <li><a class="dropdown-item" (click)="setSelectedOption('averageReviewCount')">Average Review Count</a></li>
+        </ul>
+    </div>        
+    <div class="container">
+        <div class="row">
+          <div class="col">
+            <div id="chart-container" class="d-flex justify-content-center">
+              <div id="brandAnalysisChart"></div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="category-pie-chart">
+    <div class="brand-title">
+      <h5>Category Distribution</h5>
+      <p>The Chart visually represents the proportion of products in each category.</p>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div id="chart-container" class="d-flex justify-content-center">
+            <div #pieChart></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

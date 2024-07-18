@@ -10,11 +10,14 @@ import { ProductService } from '../services/product-list-data.service';
 export class WishlistComponent {
   productData: Product[] = [];
   wishlistProducts: Product[] = [];
+  isLoading = false;
 
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.productService.getProducts().subscribe(data => {
+      this.isLoading = false;
       this.productData = data.productDetails.map(product => {
         return { 
           ...product, 

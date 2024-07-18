@@ -45,7 +45,8 @@
                             <mat-icon>cached</mat-icon><span><b>14 days</b> return available</span>
                         </div>
                         <div class="user-actions">
-                            <mat-icon class="wishlist">favorite_outlined</mat-icon>
+                            <mat-icon class="wishlist" *ngIf="!cartItem.isAddedToWishlist" (click)="toggleWishlist(cartItem, true)" >favorite_outline</mat-icon>
+                            <mat-icon class="wishlist" *ngIf="cartItem.isAddedToWishlist" (click)="toggleWishlist(cartItem, false)" >favorite</mat-icon>
                             <mat-icon class="delete" (click)="removeCartItem(cartItem)">delete_outlined</mat-icon>
                         </div>
                     </div>
@@ -65,7 +66,7 @@
                 </div>
 
                 <div class="summary-item">
-                    <span>Shipping Fee</span>
+                    <span>Shipping Fee<mat-icon class="info" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Free delivery above 20k">info</mat-icon></span>
                     <span class="shipping-fee">{{ shippingFee ? '₹' + shippingFee : 'FREE' }}</span>
                 </div>
               

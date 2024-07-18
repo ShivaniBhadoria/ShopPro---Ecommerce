@@ -8,12 +8,12 @@
             <mat-icon>person</mat-icon>
           </a>
           <ul class="dropdown-menu" [class.show]="isDropdownOpen">
-            <li><a class="dropdown-item" [routerLink]="['admin-panel']">Admin Panel</a></li>
-            <li><a class="dropdown-item" [routerLink]="['']">My Orders</a></li>
-            <li><a class="dropdown-item" [routerLink]="['']">Dashboard</a></li>
-            <li><a class="dropdown-item" [routerLink]="['']">My Account</a></li>
+            <li><a class="dropdown-item" [routerLink]="['wishlist']">My Wishlist</a></li>
+            <li><a class="dropdown-item" [routerLink]="['shop']">My Orders</a></li>
+            <li><a class="dropdown-item" [routerLink]="['shop']">Admin Panel</a></li>
+            <li><a class="dropdown-item" [routerLink]="['shop']">My Account</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" [routerLink]="['']">Login/Register</a></li>
+            <li><a class="dropdown-item" [routerLink]="['shop']">Login/Register</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -40,7 +40,7 @@
             <a class="nav-link" [routerLink]="['shop']">Shop</a>
           </li>
           <li class="nav-item" (click)="toggleNavbar()">
-            <a class="nav-link" [routerLink]="['wishlist']">My Wishlist</a>
+            <a class="nav-link" [routerLink]="['dashboard']">Dashboard</a>
           </li>
         </ul>
       </div>

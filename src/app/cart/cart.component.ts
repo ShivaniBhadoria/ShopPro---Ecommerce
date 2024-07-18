@@ -161,7 +161,11 @@ export class CartComponent {
     }
   }
 
+  toggleWishlist(cartItem: any, isAdded: boolean) {
+    cartItem.isAddedToWishlist = isAdded;
+  }
+
   orderPlaced() {
-    this.orderPlacedLabel = "ORDER PLACED";
+    this.orderPlacedLabel = "ORDER PLACED!";
   }
 }

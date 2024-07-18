@@ -54,6 +54,9 @@ export class ProductDetailsComponent {
     this.selectedColor = this.product.colorsAvailable[0];
     this.selectedSize = this.product.sizeAvailable[0];
     this.rating = this.product.ratings;
+    if(this.product.isAddedToWishlist) {
+      this.wishlistLabel = "WISHLISTED";
+    }
     this.calculateStars();
   }
 

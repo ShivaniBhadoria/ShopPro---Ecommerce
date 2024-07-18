@@ -24,7 +24,7 @@
         <div  class="spinner-border text-danger" role="status">
         </div>
     </div>
-    <div class="product-list">
+    <div class="product-list" *ngIf="!isLoading">
         <app-product-list [productData]="updatedProductData" (addToCartClicked)="updateProductData($event)"></app-product-list>
     </div>
 </div>

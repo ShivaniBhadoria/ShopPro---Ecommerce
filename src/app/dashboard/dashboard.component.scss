@@ -1,0 +1,38 @@
+.dashboard {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    padding: 5rem;
+
+    .brand-title {
+        h5, p {
+            text-align: center;
+            padding-bottom: 1rem;
+        }
+        h5 {
+            padding-top: 2rem;
+        }
+    }
+
+    .select-metric {
+        margin-bottom: 1rem;
+        .btn{
+            border-radius: 0;
+            box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+            min-width: 210px;
+        }
+        .bar-dropdown {
+            cursor: pointer;
+            min-width: 210px;
+            .dropdown-item {
+                font-size:15px;
+        
+                &:hover, &:focus {
+                    background-color: gray;
+                    color: white;
+                }
+            }
+        }
+    }
+
+}

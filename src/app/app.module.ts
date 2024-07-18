@@ -24,6 +24,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { SizeChartComponent } from './dialogs/size-chart/size-chart.component';
 import { CartComponent } from './cart/cart.component';
 import { MatBadgeModule } from '@angular/material/badge';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { MatBadgeModule } from '@angular/material/badge';
     WishlistComponent,
     ProductDetailsComponent,
     SizeChartComponent,
-    CartComponent
+    CartComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

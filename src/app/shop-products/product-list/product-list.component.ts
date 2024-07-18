@@ -15,7 +15,6 @@ export class ProductListComponent {
   constructor(private router: Router) {}
 
   ngOnInit(): void {
- 
   }
 
   toggleWishlist(product: any, isAdded: boolean) {

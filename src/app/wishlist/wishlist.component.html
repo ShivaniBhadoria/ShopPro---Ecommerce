@@ -1,3 +1,7 @@
 <div class="wishlisted-products">
-    <app-product-list [productData]="wishlistProducts"></app-product-list>
+    <app-product-list *ngIf="!isLoading" [productData]="wishlistProducts"></app-product-list>
+    <div *ngIf="isLoading" class="d-flex justify-content-center align-items-center" [class.spinner-visible]="isLoading">
+        <div  class="spinner-border text-danger" role="status">
+        </div>
+    </div>
 </div>
