@@ -7,21 +7,21 @@
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="5000">
+              <div class="carousel-item active" data-bs-interval="3000">
                 <img src="../assets/home/slideshow-1.jpg" class="d-block w-100 slideshow-img" alt="slide-1">
                 <div class="carousel-caption d-md-block slideshow-1">
                   <p class="shop-desc">Find Your Perfect Look with Our Exclusive Women's Fashion!</p>
                   <button class="btn btn-danger btn-responsive" [routerLink]="['shop']" [queryParams]="{ source: 'shop-women' }">Shop For Women</button>
                 </div>
               </div>
-              <div class="carousel-item" data-bs-interval="5000">
+              <div class="carousel-item" data-bs-interval="3000">
                 <img src="../assets/home/slideshow-2.jpg" class="d-block w-100 slideshow-img" alt="slide-2">
                 <div class="carousel-caption d-md-block slideshow-2">
                   <p class="shop-desc">Explore Unique and Trendy Men's Fashion Collections!</p>
                   <button class="btn btn-danger btn-responsive" [routerLink]="['shop']" [queryParams]="{ source: 'shop-men' }">Shop For Men</button>
                 </div>
               </div>
-              <div class="carousel-item" data-bs-interval="5000">
+              <div class="carousel-item" data-bs-interval="3000">
                 <img src="../assets/home/slideshow-3.jpg" class="d-block w-100 slideshow-img" alt="slide-3">
                 <div class="carousel-caption d-md-block slideshow-3">
                   <p>Discover the Latest and Most Exciting Lifestyle and Accessories Collections!</p>
@@ -62,6 +62,15 @@
         </div>
       </div>
       <div class="brand-links">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 mb-4" *ngFor="let logo of logos">
+              <a [routerLink]="['shop']" [queryParams]="{ source: logo.name }" class="logo-container">
+                <img [src]="logo.imageUrl" class="img-fluid" [alt]="logo.name">
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 </div>

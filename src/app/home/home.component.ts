@@ -1,22 +1,20 @@
 import { Component } from '@angular/core';
 import { OfferCard } from '../models/product.model';
-import { ProductService } from '../services/product-list-data.service';
-
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
 
   offerCards: OfferCard[] = [
     {
       imgSrc: '../assets/home/card-1.jpg',
-      title: 'Handbags',
+      title: 'Purses',
       text: 'MIN 40% OFF',
       link: 'shop',
-      queryParams: { source: 'handbags-offer'}
+      queryParams: { source: 'purses-offer'}
     },
     {
       imgSrc: '../assets/home/card-2.jpg',
@@ -42,11 +40,15 @@ export class HomeComponent {
   ];
 
   brandNames: string[] = [
-    'BrightBox', 'PureWave', 'ClearLine', 'QuickPulse', 'SunnySide', 
-    'BrightEra', 'ClearEdge', 'NextStep', 'VibeMax'
+    'BrightBox', 'PureWave', 'BrightEra', 'QuickPulse', 'SunnySide', 
+    'ClearLine', 'ClearEdge', 'NextStep', 'VibeMax'
   ];
 
-  constructor() {}
+  logos = this.brandNames.map(name => ({
+    name,
+    imageUrl: `../assets/brand-logos/${name.toLowerCase()}.png`
+  }));
 
+  constructor() {}
 
 }

@@ -30,8 +30,8 @@ export class FiltersComponent {
       'shop-accessories': { option: "Accessories", filterType: "category" },
       'shoes-offer': { option: "Shoes", filterType: "category" },
       'makeup-offer': { option: "Makeup", filterType: "category" },
-      'handbags-offer': { option: "Accessories", filterType: "category" },
-      'watches-offer': { option: "Accessories", filterType: "category" }//multiple filters
+      'purses-offer': { option: "Purses", filterType: "category" },
+      'watches-offer': { option: "Watches", filterType: "category" }//multiple filters
     };
   
     const mapping = sourceMappings[this.source];

@@ -709,6 +709,93 @@
             "reviewCount": 155,
             "isAddedToWishlist": false,
             "isAddedToCart": false
+        },
+        {
+            "id": 22,
+            "path": "assets/products/product-22.jpg",
+            "path1": "assets/products/product-23.jpg",
+            "path2": "assets/products/product-5.jpg",
+            "title": "Urban Voyager Shoulder Bag",
+            "description": "Discover the epitome of urban functionality with our Urban Voyager Shoulder Bag. Crafted for the modern explorer, this spacious bag combines style with practicality, offering ample room for your daily essentials and more.",
+            "category": "Purses",
+            "gender": "Women",
+            "price": 11000,
+            "brand": "VibeMax",
+            "colorsAvailable": [
+                "Black",
+                "White",
+                "Orange"
+            ],
+            "sizeAvailable": [
+                "Onesize"
+            ],
+            "ratings": 4.5,
+            "popularity": 7,
+            "discount": 50,
+            "isNewArrival": false,
+            "occasion": ["Party", "Wedding"],
+            "material": "Other",
+            "reviewCount": 135,
+            "isAddedToWishlist": true,
+            "isAddedToCart": false
+        },
+        {
+            "id": 23,
+            "path": "assets/products/product-23.jpg",
+            "path1": "assets/products/product-24.jpg",
+            "path2": "assets/products/product-4.jpg",
+            "title": "Elegance Redefined: Slim Band Watch",
+            "description": "Experience timeless sophistication with our Slim Band Watch, a masterpiece of minimalist design and precision craftsmanship.",
+            "category": "Watches",
+            "gender": "Women",
+            "price": 20000,
+            "brand": "VibeMax",
+            "colorsAvailable": [
+                "Brown",
+                "White",
+                "Red"
+            ],
+            "sizeAvailable": [
+                "Onesize"
+            ],
+            "ratings": 3.5,
+            "popularity": 5,
+            "discount": 25,
+            "isNewArrival": false,
+            "occasion": ["Party", "Wedding", "Casual"],
+            "material": "Other",
+            "reviewCount": 127,
+            "isAddedToWishlist": false,
+            "isAddedToCart": false
+        },
+        {
+            "id": 24,
+            "path": "assets/products/product-24.jpg",
+            "path1": "assets/products/product-24.jpg",
+            "path2": "assets/products/product-25.jpg",
+            "title": "Bold Impressions: Oversized Patterned Bag",
+            "description": "Make a statement with our Oversized Patterned Bag, a bold and eye-catching accessory that combines functionality with fashion-forward design.",
+            "category": "Purses",
+            "gender": "Women",
+            "price": 13000,
+            "brand": "VibeMax",
+            "colorsAvailable": [
+                "Brown",
+                "White",
+                "Blue"
+            ],
+            "sizeAvailable": [
+                "Onesize"
+            ],
+            "ratings": 4,
+            "popularity": 7,
+            "discount": 30,
+            "isNewArrival": false,
+            "occasion": ["Party", "Wedding", "Casual"],
+            "material": "Other",
+            "reviewCount": 203,
+            "isAddedToWishlist": false,
+            "isAddedToCart": false
         }
     ]   
 }

@@ -11,7 +11,7 @@ export const FILTER_DATA = [
       options: [
         'Tshirts', 'Shirts', 'Skirts', 'Tops', 'Trousers', 'Dresses', 'Jeans',
         'Co-ords', 'Blazers', 'Sarees', 'Kurta-Sets', 'Heels',
-        'Shoes', 'Flats', 'Makeup', 'Accessories'
+        'Shoes', 'Flats', 'Makeup', 'Purses', 'Watches', 'Accessories'
       ]
     },
     {

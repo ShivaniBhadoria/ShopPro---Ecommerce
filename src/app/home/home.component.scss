@@ -94,6 +94,22 @@
                 margin: 0 35px;
             }
         }
+
+        .brand-links {
+            margin-top: 5rem;
+
+            .logo-container {
+                display: block;
+                position: relative;
+                overflow: hidden;
+                transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+                &:hover {
+                    // transform: translateY(-7px);
+                    transform: rotate(10deg);
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+                }
+            } 
+        }
     }
 }
 

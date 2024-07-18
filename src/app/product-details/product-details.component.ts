@@ -31,7 +31,7 @@ export class ProductDetailsComponent {
 
   constructor(private route: ActivatedRoute, private productService: ProductService, 
     private router: Router, public dialog: MatDialog,
-  private cartService: CartService) {}
+    private cartService: CartService) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {

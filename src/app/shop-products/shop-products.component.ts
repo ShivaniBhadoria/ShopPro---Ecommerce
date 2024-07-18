@@ -74,6 +74,7 @@ export class ShopProductsComponent implements OnInit {
       event.preventDefault();
     }
     const sortCriteria: { [key: string]: (a: any, b: any) => number } = {
+      'new': (a, b) => a.reviewCount - b.reviewCount,
       'priceLowToHigh': (a, b) => a.discountedPrice - b.discountedPrice,
       'priceHighToLow': (a, b) => b.discountedPrice - a.discountedPrice,
       'ratings': (a, b) => b.ratings - a.ratings,
